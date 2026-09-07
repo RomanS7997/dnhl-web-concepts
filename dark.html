@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Da Nang Homes & Living | Căn hộ & biệt thự cao cấp tại Đà Nẵng</title>
+<meta name="description" content="120+ căn hộ và biệt thự cao cấp tại Đà Nẵng cho thuê và mua bán. Tư vấn 5 ngôn ngữ, phản hồi trong 15 phút, không phí môi giới cho người thuê.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A1020;--bg2:#0E1729;--bg3:#131E35;
+  --ink:#F3EEE3;--ink2:#C9CFDC;--muted:#8F98AC;
+  --gold:#D4AF37;--gold2:#F1D77E;--gold3:#A98523;
+  --line:rgba(255,255,255,.10);--glass:rgba(255,255,255,.055);
+  --cream:#F5F0E6;--cream2:#ECE5D6;--dark:#121826;--dark2:#4A5266;
+  --r:18px;--shadow:0 30px 60px -30px rgba(0,0,0,.75);
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Be Vietnam Pro',Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{width:min(1200px,calc(100% - 48px));margin:0 auto;position:relative}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(700px 420px at 88% 8%,rgba(212,175,55,.09),transparent 62%),
+             radial-gradient(800px 560px at 6% 92%,rgba(64,96,170,.16),transparent 62%)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease,color .25s ease;white-space:nowrap}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn-gold{background:linear-gradient(135deg,#F5DF8E 0%,#D4AF37 55%,#B48F2A 100%);color:#1A1405;box-shadow:0 14px 30px -12px rgba(212,175,55,.65)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 20px 40px -12px rgba(212,175,55,.8)}
+.btn-ghost{border-color:rgba(255,255,255,.22);color:var(--ink);background:rgba(255,255,255,.04)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold2)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:#1E2740;transform:translateY(-2px)}
+.btn-sm{padding:10px 20px;font-size:14px}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid transparent;transition:background .35s ease,border-color .35s ease}
+.hdr.scrolled,.hdr.open{background:rgba(10,16,32,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:78px}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo .mark{width:42px;height:42px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);color:var(--gold2);font-weight:600;font-size:15px;letter-spacing:.04em;background:rgba(212,175,55,.08)}
+.logo .name{font-family:var(--serif);font-size:18px;line-height:1.05;font-weight:500;white-space:nowrap}
+.logo .name small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:4px;font-weight:600}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:14.5px;font-weight:500;color:var(--ink2);position:relative;padding:6px 0;transition:color .25s}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s ease}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{right:0}
+.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;flex:none}
+.langs button{background:none;border:0;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 9px;border-radius:999px;cursor:pointer;transition:color .2s,background .2s}
+.langs button:hover{color:var(--ink)}
+.langs button.on{background:var(--gold);color:#1A1405}
+.hdr .cta{flex:none}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);cursor:pointer;place-items:center;flex:none;margin-left:auto}
+.burger span{display:block;width:18px;height:1.6px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.6px;background:var(--ink);transition:transform .3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.hdr.open .burger span{background:transparent}
+.hdr.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.hdr.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 170px;overflow:hidden;isolation:isolate}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:center;animation:kb 20s ease-out both}
+@keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
+.hero .veil{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(10,16,32,.94) 0%,rgba(10,16,32,.78) 40%,rgba(10,16,32,.28) 100%),
+  linear-gradient(180deg,rgba(10,16,32,.6) 0%,rgba(10,16,32,0) 28%,rgba(10,16,32,.15) 65%,var(--bg) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);flex:none}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.3vw,74px);line-height:1.06;margin:24px 0 22px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero .lead{font-size:18px;color:var(--ink2);max-width:560px;font-weight:300;line-height:1.7;margin:0 0 36px}
+.hero .lead b{font-weight:500;color:var(--ink)}
+.hero .actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero .actions .hint{font-size:13.5px;color:var(--muted)}
+.hero .trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:44px;font-size:13px;color:var(--muted)}
+.hero .trust span{display:flex;align-items:center;gap:8px}
+.hero .trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.h-in{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.h-in.d1{animation-delay:.12s}.h-in.d2{animation-delay:.24s}.h-in.d3{animation-delay:.36s}.h-in.d4{animation-delay:.5s}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.feat{justify-self:end;width:min(100%,410px);background:rgba(14,23,41,.55);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:22px;padding:14px;box-shadow:var(--shadow);animation:up .9s .45s cubic-bezier(.2,.7,.2,1) both}
+.feat .ph{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.feat .ph img{width:100%;height:100%;object-fit:cover}
+.feat .fb{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:14px 6px 4px}
+.feat .fb b{display:block;font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.25}
+.feat .fb span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+.feat .price{white-space:nowrap}
+.scrollhint{position:absolute;left:50%;bottom:120px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);z-index:1}
+.scrollhint i{width:1px;height:42px;background:linear-gradient(180deg,var(--gold),transparent);animation:drop 2.2s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- search ---------- */
+.search{position:relative;z-index:5;margin-top:-104px}
+.panel{background:rgba(19,30,53,.78);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:24px;padding:22px 24px 24px;box-shadow:var(--shadow)}
+.panel .ttl{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}
+.panel .ttl b{font-family:var(--serif);font-weight:500;font-size:19px}
+.panel .ttl span{font-size:13px;color:var(--muted)}
+.panel .row{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:12px;align-items:end}
+.field label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:600}
+.field .sel{position:relative}
+.field select{width:100%;appearance:none;-webkit-appearance:none;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:14px 40px 14px 16px;font:inherit;font-size:15px;cursor:pointer;transition:border-color .25s}
+.field select:hover,.field select:focus{border-color:rgba(212,175,55,.6);outline:none}
+.field select option{color:#111;background:#fff}
+.field .sel::after{content:"";position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.panel .btn{height:52px}
+
+/* ---------- number strip ---------- */
+.numbers{padding:84px 0 20px;position:relative;z-index:1}
+.numbers .grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.num{padding:36px 28px;border-right:1px solid var(--line)}
+.num:last-child{border-right:0}
+.num b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(38px,4vw,58px);line-height:1;background:linear-gradient(135deg,#F9E7A6,#D4AF37 60%,#B08A26);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.01em}
+.num span{display:block;margin-top:12px;color:var(--muted);font-size:14px;line-height:1.5}
+.numbers .note{font-size:12px;color:var(--muted);margin:16px 0 0;opacity:.8}
+
+/* ---------- sections ---------- */
+.sec{padding:96px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:44px}
+.sec h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.6vw,48px);line-height:1.12;margin:14px 0 0;letter-spacing:-.01em}
+.sec h2 em{font-style:italic;color:var(--gold2)}
+.sec-head p{max-width:520px;color:var(--muted);margin:14px 0 0;font-size:15.5px}
+.link-gold{color:var(--gold);font-weight:600;font-size:14px;display:inline-flex;gap:8px;align-items:center;white-space:nowrap;transition:gap .25s}
+.link-gold:hover{gap:12px}
+.link-gold svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- listing cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s;display:flex;flex-direction:column;position:relative}
+.card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.5);box-shadow:0 34px 50px -30px rgba(0,0,0,.85)}
+.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.06)}
+.card .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,32,0) 55%,rgba(10,16,32,.72) 100%);pointer-events:none}
+.chip{position:absolute;top:14px;left:14px;z-index:2;background:rgba(10,16,32,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:999px;line-height:1.3}
+.chip.gold{background:rgba(212,175,55,.94);color:#1A1405;border-color:transparent}
+.chip.r{left:auto;right:14px}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-family:var(--serif);font-weight:500;font-size:20px;margin:0;line-height:1.3}
+.loc{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13.5px}
+.loc svg,.specs svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.specs{display:flex;gap:16px;color:var(--ink2);font-size:13.5px;flex-wrap:wrap}
+.specs span{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);gap:12px}
+.price{font-family:var(--serif);font-size:24px;color:var(--gold2);line-height:1}
+.price small{font-family:var(--sans);font-size:13px;color:var(--muted);margin-left:4px}
+
+/* ---------- districts ---------- */
+.dist{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:212px;gap:14px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--bg3);display:block}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,32,.05) 30%,rgba(10,16,32,.88) 100%);pointer-events:none}
+.tile .t{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.tile .t b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.2}
+.tile.big .t b{font-size:34px}
+.tile .t span{display:block;font-size:13px;color:var(--ink2);margin-top:4px;line-height:1.4}
+.tile .cnt{position:absolute;top:12px;right:12px;z-index:2;font-size:11.5px;font-weight:700;letter-spacing:.06em;background:rgba(10,16,32,.7);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:5px 10px;border-radius:999px;color:var(--gold2)}
+
+/* ---------- invest ---------- */
+.invest{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.invest .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:72px;align-items:center}
+.frame{position:relative;isolation:isolate;margin:18px 22px 22px 18px}
+.frame img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%}
+.frame::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid rgba(212,175,55,.55);border-radius:var(--r);z-index:-1}
+.frame .badge{position:absolute;right:-22px;bottom:34px;background:rgba(14,23,41,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow);min-width:200px}
+.frame .badge b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;color:var(--gold2);line-height:1}
+.frame .badge span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}
+.invest .lead{color:var(--ink2);font-size:16.5px;line-height:1.75;margin:18px 0 0;font-weight:300}
+.checks{list-style:none;padding:0;margin:26px 0 34px;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start;color:var(--ink2);font-size:15.5px;line-height:1.55}
+.checks li i{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;margin-top:2px}
+.checks li svg{width:12px;height:12px;stroke:var(--gold2);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.langrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;font-size:13px;color:var(--muted)}
+.langrow span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--ink2)}
+.soon{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,175,55,.5);color:var(--gold2);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:999px;margin-left:12px;vertical-align:middle}
+.soon::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.25)}
+
+/* ---------- why us ---------- */
+.why .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);padding:32px 26px 30px;position:relative;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .35s,border-color .35s}
+.stat:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.45)}
+.stat::before{content:"";position:absolute;top:0;left:0;width:52px;height:2px;background:linear-gradient(90deg,var(--gold2),var(--gold))}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:52px;line-height:1;color:var(--gold2);letter-spacing:-.01em}
+.stat b small{font-size:22px;margin-left:4px;color:var(--gold)}
+.stat span{display:block;margin-top:14px;color:var(--ink2);font-size:15px;line-height:1.5}
+.why .quote{margin-top:44px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;border:1px solid var(--line);border-radius:var(--r);padding:26px 30px;background:rgba(212,175,55,.04)}
+.why .quote .q{font-family:var(--serif);font-size:64px;line-height:.6;color:var(--gold);padding-top:22px}
+.why .quote p{margin:0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;color:var(--ink)}
+.why .quote small{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--muted);margin-top:10px}
+
+/* ---------- light sections ---------- */
+.light{background:var(--cream);color:var(--dark)}
+.light .eyebrow{color:var(--gold3)}
+.light .eyebrow::before{background:var(--gold3)}
+.light .sec-head p{color:var(--dark2)}
+.light .link-gold{color:var(--gold3)}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.art{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 22px 44px -30px rgba(18,24,38,.4);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;border:1px solid rgba(18,24,38,.06);display:flex;flex-direction:column}
+.art:hover{transform:translateY(-6px);box-shadow:0 30px 50px -28px rgba(18,24,38,.5)}
+.art .ph{aspect-ratio:16/10;overflow:hidden}
+.art .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.art:hover .ph img{transform:scale(1.05)}
+.art .body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.art .cat{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold3);font-weight:700;display:flex;justify-content:space-between}
+.art .cat span{color:var(--dark2);letter-spacing:0;text-transform:none;font-weight:500}
+.art h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.3;margin:12px 0 10px;color:var(--dark)}
+.art p{color:var(--dark2);font-size:14.5px;margin:0 0 18px;line-height:1.65}
+.art .link-gold{margin-top:auto}
+
+/* ---------- contact ---------- */
+.contact{background:linear-gradient(180deg,var(--cream) 0%,var(--cream2) 100%);color:var(--dark);border-top:1px solid rgba(18,24,38,.08)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact h2{color:var(--dark)}
+.contact .lead{color:var(--dark2);font-size:16.5px;margin:18px 0 0;line-height:1.7}
+.msgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 26px}
+.msg{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(18,24,38,.08);border-radius:14px;padding:13px 16px;font-weight:600;font-size:15px;color:var(--dark);transition:transform .25s,box-shadow .25s}
+.msg:hover{transform:translateY(-2px);box-shadow:0 16px 30px -18px rgba(18,24,38,.45)}
+.msg i{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#fff;font-style:normal;font-size:13px;font-weight:800;flex:none}
+.msg i svg{width:20px;height:20px;fill:#fff}
+.msg small{display:block;font-weight:400;font-size:12px;color:var(--dark2);margin-top:1px}
+.msg.zalo i{background:#0068FF}.msg.wa i{background:#25D366}.msg.tg i{background:#229ED9}.msg.fb i{background:#0084FF}
+.cinfo{display:grid;gap:12px;color:var(--dark2);font-size:15px}
+.cinfo div{display:flex;gap:12px;align-items:flex-start}
+.cinfo svg{width:18px;height:18px;stroke:var(--gold3);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:3px}
+.cinfo a{color:var(--dark);font-weight:600}
+.form{background:#fff;border-radius:22px;padding:34px;box-shadow:0 34px 60px -40px rgba(18,24,38,.55);border:1px solid rgba(18,24,38,.06)}
+.form h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 6px}
+.form .sub{color:var(--dark2);font-size:14px;margin:0 0 22px}
+.form .f{margin-bottom:16px}
+.form label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dark2);font-weight:700;margin-bottom:8px}
+.form input,.form textarea{width:100%;border:1px solid rgba(18,24,38,.14);border-radius:12px;padding:14px 16px;font:inherit;font-size:15px;background:#FBF9F4;color:var(--dark);transition:border-color .25s,box-shadow .25s}
+.form textarea{min-height:110px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.22);background:#fff}
+.form ::placeholder{color:#9AA1B1}
+.form .btn{width:100%;margin-top:6px}
+.form .note{font-size:12.5px;color:var(--dark2);margin:14px 0 0;text-align:center;line-height:1.5}
+.form .ok{background:#EEF7EA;border:1px solid #BFE0B4;color:#1F5A2B;border-radius:12px;padding:14px 16px;font-size:14.5px;margin-top:16px;line-height:1.5}
+
+/* ---------- footer ---------- */
+footer{background:#070C18;border-top:1px solid var(--line);padding:64px 0 36px;position:relative;z-index:1}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px}
+footer h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 16px;font-weight:700}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+footer li,footer p{font-size:14px;color:var(--muted);margin:0;line-height:1.6}
+footer a:hover{color:var(--gold2)}
+footer .about{max-width:340px;margin-top:14px}
+footer .langs{display:inline-flex;margin-top:18px}
+.fbot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+
+/* ---------- floating messenger (mobile) ---------- */
+.fab{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:60;background:rgba(10,16,32,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:6px;gap:6px;box-shadow:0 20px 40px -14px rgba(0,0,0,.85)}
+.fab a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 10px;border-radius:999px;font-weight:700;font-size:14px}
+.fab a svg{width:18px;height:18px;fill:currentColor}
+.fab .z{background:#0068FF;color:#fff}
+.fab .w{background:#25D366;color:#0B2B17}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}.reveal.d6{transition-delay:.48s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .nav{gap:18px}
+  .hero .wrap{grid-template-columns:1fr}
+  .feat{display:none}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .why .grid{grid-template-columns:repeat(2,1fr)}
+  .invest .wrap{grid-template-columns:1fr;gap:48px}
+  .contact .wrap{grid-template-columns:1fr}
+  .arts{grid-template-columns:1fr 1fr}
+  .panel .row{grid-template-columns:1fr 1fr}
+  .panel .btn{grid-column:span 2}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .nav,.hdr .cta{display:none}
+  .burger{display:grid}
+  .hdr.open .nav{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,16,32,.97);padding:14px 24px 24px;gap:0;border-bottom:1px solid var(--line);margin:0}
+  .hdr.open .nav a{padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .hdr.open .nav a::after{display:none}
+  .langs{margin-left:auto}
+}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 36px)}
+  .hdr .wrap{height:64px;gap:10px}
+  .logo .mark{width:36px;height:36px;font-size:13px}
+  .logo .name{font-size:14.5px}
+  .logo .name small{display:none}
+  .langs{padding:2px}
+  .langs button{font-size:10.5px;padding:5px 5.5px;letter-spacing:.02em}
+  .burger{width:38px;height:38px;margin-left:0}
+  .hero{padding:112px 0 118px;min-height:auto}
+  .hero h1{font-size:40px;margin:18px 0 16px}
+  .hero .lead{font-size:16px;margin-bottom:28px}
+  .hero .actions .btn{width:100%}
+  .hero .trust{gap:10px;flex-direction:column;margin-top:30px}
+  .scrollhint{display:none}
+  .search{margin-top:-64px}
+  .panel{padding:18px 16px 18px;border-radius:20px}
+  .panel .ttl{flex-direction:column;align-items:flex-start;gap:4px}
+  .panel .row{grid-template-columns:1fr}
+  .panel .btn{grid-column:auto;width:100%}
+  .numbers{padding:56px 0 8px}
+  .numbers .grid{grid-template-columns:1fr 1fr}
+  .num{border-right:0;border-bottom:1px solid var(--line);padding:22px 14px}
+  .num:nth-child(odd){border-right:1px solid var(--line)}
+  .num:nth-last-child(-n+2){border-bottom:0}
+  .num b{font-size:34px}
+  .num span{font-size:13px}
+  .sec{padding:64px 0}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:28px}
+  .cards{grid-template-columns:1fr;gap:16px}
+  .dist{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}
+  .tile.big .t b{font-size:26px}
+  .tile .t{left:14px;right:14px;bottom:12px}
+  .tile .t b{font-size:18px}
+  .tile .t span{font-size:12px}
+  .frame{margin:14px 18px 18px 14px}
+  .frame .badge{right:-10px;bottom:20px;padding:12px 16px;min-width:0}
+  .frame .badge b{font-size:24px}
+  .soon{margin:10px 0 0;display:inline-flex}
+  .why .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .stat{padding:22px 16px 20px}
+  .stat b{font-size:36px}
+  .stat b small{font-size:16px}
+  .stat span{font-size:13.5px;margin-top:10px}
+  .why .quote{grid-template-columns:1fr;gap:6px;padding:22px 20px}
+  .why .quote .q{font-size:48px;padding-top:14px;line-height:.5}
+  .why .quote p{font-size:17px}
+  .arts{grid-template-columns:1fr;gap:16px}
+  .msgs{grid-template-columns:1fr 1fr;gap:10px}
+  .msg{padding:11px 12px;font-size:14px;gap:10px}
+  .msg i{width:34px;height:34px}
+  .form{padding:24px 18px}
+  .fgrid{grid-template-columns:1fr;gap:30px}
+  footer{padding-bottom:104px}
+  .fbot{flex-direction:column;gap:6px}
+}
+@media (max-width:900px){.fab{display:flex}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Da Nang Homes & Living">
+      <span class="mark">DH</span>
+      <span class="name">Da Nang Homes<small>&amp; Living</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu chính">
+      <a href="#cho-thue">Cho thuê</a>
+      <a href="#mua-ban">Mua bán</a>
+      <a href="#khu-vuc">Khu vực</a>
+      <a href="#kinh-nghiem">Kinh nghiệm</a>
+      <a href="#ve-chung-toi">Về chúng tôi</a>
+    </nav>
+    <div class="langs" role="group" aria-label="Ngôn ngữ">
+      <button type="button" class="on">VI</button>
+      <button type="button">EN</button>
+      <button type="button">RU</button>
+      <button type="button">ZH</button>
+      <button type="button">KO</button>
+    </div>
+    <a class="btn btn-ghost btn-sm cta" href="#lien-he">Liên hệ</a>
+    <button class="burger" id="burger" type="button" aria-label="Mở menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="bg"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=70" alt="Biệt thự có hồ bơi tại Đà Nẵng về đêm" onerror="this.onerror=null;this.src='https://picsum.photos/seed/danang-night/1800/1100'"></div>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow h-in">Đà Nẵng · Bất động sản cao cấp cho khách quốc tế</span>
+      <h1 class="h-in d1">Sống và đầu tư<br>bên bờ biển <em>Đà Nẵng</em></h1>
+      <p class="lead h-in d2"><b>120+ căn hộ và biệt thự</b> view biển Mỹ Khê và sông Hàn. Cho thuê dài hạn cho gia đình, chuyên gia; mua bán cho nhà đầu tư nước ngoài. Tư vấn bằng tiếng Việt, English, 한국어, 中文, Русский.</p>
+      <div class="actions h-in d3">
+        <a class="btn btn-gold" href="#lien-he">Nhận danh sách nhà phù hợp
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span class="hint">Miễn phí · gửi trong 15 phút</span>
+      </div>
+      <div class="trust h-in d4">
+        <span>Không phí môi giới cho người thuê</span>
+        <span>Hợp đồng song ngữ, minh bạch</span>
+        <span>Văn phòng 36 Bạch Đằng, Hải Châu</span>
+      </div>
+    </div>
+    <aside class="feat" aria-label="Căn nổi bật">
+      <div class="ph">
+        <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=1200&q=70" alt="Ocean Villa Phan Bá Vành" onerror="this.onerror=null;this.src='https://picsum.photos/seed/oceanvilla/1200/800'">
+        <span class="chip gold">Nổi bật tuần này</span>
+      </div>
+      <div class="fb">
+        <div><b>Ocean Villa Phan Bá Vành</b><span>Nại Hiên Đông · Sơn Trà · 4 PN · 600 m²</span></div>
+        <div class="price">$2,684<small>/tháng</small></div>
+      </div>
+    </aside>
+  </div>
+  <div class="scrollhint" aria-hidden="true"><i></i>Cuộn xuống</div>
+</section>
+
+<!-- ================= SEARCH ================= -->
+<section class="search" aria-label="Tìm nhà">
+  <div class="wrap">
+    <div class="panel reveal">
+      <div class="ttl"><b>Tìm nhà theo nhu cầu của bạn</b><span>Chọn 4 tiêu chí, chúng tôi lọc từ 120+ căn đang có</span></div>
+      <div class="row">
+        <div class="field"><label for="s1">Khu vực</label><div class="sel"><select id="s1">
+          <option>Tất cả khu vực</option><option>Sơn Trà</option><option>Ngũ Hành Sơn</option><option>Hải Châu</option><option>Mỹ An</option><option>Hòa Hải</option><option>An Thượng</option><option>Mỹ Khê</option></select></div></div>
+        <div class="field"><label for="s2">Loại hình</label><div class="sel"><select id="s2">
+          <option>Căn hộ</option><option>Biệt thự</option><option>Nhà phố</option><option>Penthouse</option></select></div></div>
+        <div class="field"><label for="s3">Ngân sách / tháng</label><div class="sel"><select id="s3">
+          <option>Dưới $1,000</option><option>$1,000 - $2,000</option><option>$2,000 - $5,000</option><option>Trên $5,000</option></select></div></div>
+        <div class="field"><label for="s4">Thời hạn</label><div class="sel"><select id="s4">
+          <option>12 tháng trở lên</option><option>6 - 12 tháng</option><option>1 - 6 tháng</option><option>Mua để ở / đầu tư</option></select></div></div>
+        <button class="btn btn-gold" id="searchBtn" type="button">Tìm nhà
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INVESTOR NUMBERS ================= -->
+<section class="numbers" aria-label="Con số cho nhà đầu tư">
+  <div class="wrap">
+    <div class="grid">
+      <div class="num reveal"><b>6-8%</b><span>Lợi suất cho thuê mỗi năm với căn hộ view biển*</span></div>
+      <div class="num reveal d1"><b>50 năm</b><span>Quyền sở hữu căn hộ dành cho người nước ngoài</span></div>
+      <div class="num reveal d2"><b>$884</b><span>Căn hộ 1 phòng ngủ tại Mỹ An, giá thuê từ / tháng</span></div>
+      <div class="num reveal d3"><b>600 m²</b><span>Biệt thự biển Sơn Trà, 4 phòng ngủ, hồ bơi riêng</span></div>
+    </div>
+    <p class="note">*Số liệu tham khảo theo giao dịch thực tế của khách hàng năm 2025, không phải cam kết lợi nhuận.</p>
+  </div>
+</section>
+
+<!-- ================= LISTINGS ================= -->
+<section class="sec" id="cho-thue">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow">Cho thuê</span>
+        <h2>Căn hộ & biệt thự <em>nổi bật</em></h2>
+        <p>Giá thuê theo tháng, đã bao gồm phí quản lý tòa nhà. Xem trực tiếp trong 24 giờ, không phí môi giới cho người thuê.</p>
+      </div>
+      <a class="link-gold" href="#lien-he">Xem tất cả 120+ căn <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="cards">
+
+      <article class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=70" alt="Lux Panoma 2, căn hộ 1 phòng ngủ" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/panoma2/1200/800'"><span class="chip">Căn hộ</span></div>
+        <div class="body">
+          <h3>Lux Panoma 2 (1PN)</h3>
+          <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Mỹ An · Ngũ Hành Sơn</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M21 18v-6a2 2 0 0 0-2-2H10v6M3 14h18M3 18h18"/><rect x="5" y="8" width="5" height="4" rx="1"/></svg>1 PN</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></svg>1 WC</span>
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/></svg>50 m²</span>
+          </div>
+          <div class="foot"><div class="price">$884<small>/tháng</small></div><a class="btn btn-ghost btn-sm" href="#lien-he">Xem</a></div>
+        </div>
+      </article>
+
+      <article class="card reveal d1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=1200&q=70" alt="Ocean Villa Phan Bá Vành" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/oceanvilla/1200/800'"><span class="chip gold">Biệt thự · Hồ bơi</span></div>
+        <div class="body">
+          <h3>Ocean Villa Phan Bá Vành</h3>
+          <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Nại Hiên Đông · Sơn Trà</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M21 18v-6a2 2 0 0 0-2-2H10v6M3 14h18M3 18h18"/><rect x="5" y="8" width="5" height="4" rx="1"/></svg>4 PN</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></svg>4 WC</span>
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/></svg>600 m²</span>
+          </div>
+          <div class="foot"><div class="price">$2,684<small>/tháng</small></div><a class="btn btn-ghost btn-sm" href="#lien-he">Xem</a></div>
+        </div>
+      </article>
+
+      <article class="card reveal d2">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=70" alt="Nhà phố hiện đại đường Hải Phòng" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/haiphong/1200/800'"><span class="chip">Nhà phố</span></div>
+        <div class="body">
+          <h3>Nhà phố hiện đại đường Hải Phòng</h3>
+          <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Hải Châu</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M21 18v-6a2 2 0 0 0-2-2H10v6M3 14h18M3 18h18"/><rect x="5" y="8" width="5" height="4" rx="1"/></svg>3 PN</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></svg>3 WC</span>
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/></svg>100 m²</span>
+          </div>
+          <div class="foot"><div class="price">$845<small>/tháng</small></div><a class="btn btn-ghost btn-sm" href="#lien-he">Xem</a></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=70" alt="Lux Panoma 2 view sông Hàn" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/songhan/1200/800'"><span class="chip">View sông Hàn</span></div>
+        <div class="body">
+          <h3>Lux Panoma 2 (1PN) view sông Hàn</h3>
+          <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Mỹ An</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M21 18v-6a2 2 0 0 0-2-2H10v6M3 14h18M3 18h18"/><rect x="5" y="8" width="5" height="4" rx="1"/></svg>1 PN</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></svg>1 WC</span>
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/></svg>50 m²</span>
+          </div>
+          <div class="foot"><div class="price">$1,150<small>/tháng</small></div><a class="btn btn-ghost btn-sm" href="#lien-he">Xem</a></div>
+        </div>
+      </article>
+
+      <article class="card reveal d1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=70" alt="One River Regal Villa" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/oneriver/1200/800'"><span class="chip gold">Biệt thự · Đầu tư</span></div>
+        <div class="body">
+          <h3>One River Regal Villa</h3>
+          <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Hòa Hải · Ngũ Hành Sơn</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M21 18v-6a2 2 0 0 0-2-2H10v6M3 14h18M3 18h18"/><rect x="5" y="8" width="5" height="4" rx="1"/></svg>4 PN</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></svg>4 WC</span>
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/></svg>300 m²</span>
+          </div>
+          <div class="foot"><div class="price">$5,752<small>/tháng</small></div><a class="btn btn-ghost btn-sm" href="#lien-he">Xem</a></div>
+        </div>
+      </article>
+
+      <article class="card reveal d2">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=70" alt="Lux Panoma 1 view biển" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/panoma1/1200/800'"><span class="chip">View biển</span></div>
+        <div class="body">
+          <h3>Lux Panoma 1 (1PN) view biển</h3>
+          <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Mỹ An</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M21 18v-6a2 2 0 0 0-2-2H10v6M3 14h18M3 18h18"/><rect x="5" y="8" width="5" height="4" rx="1"/></svg>1 PN</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></svg>1 WC</span>
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/></svg>50 m²</span>
+          </div>
+          <div class="foot"><div class="price">$1,035<small>/tháng</small></div><a class="btn btn-ghost btn-sm" href="#lien-he">Xem</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= DISTRICTS ================= -->
+<section class="sec" id="khu-vuc" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow">Khu vực</span>
+        <h2>Chọn khu phù hợp với <em>nhịp sống</em> của bạn</h2>
+        <p>Mỗi khu ở Đà Nẵng có một tính cách riêng: biển, sông, trung tâm hay yên tĩnh ven resort. Chúng tôi có căn ở cả bảy khu.</p>
+      </div>
+      <a class="link-gold" href="#kinh-nghiem">So sánh các khu <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="dist">
+      <a class="tile big reveal" href="#lien-he"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1400&q=70" alt="Bãi biển Mỹ Khê" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/mykhe/1400/900'"><span class="cnt">14 căn</span><div class="t"><b>Mỹ Khê</b><span>Bãi biển đẹp nhất thành phố, căn hộ view biển, chạy bộ mỗi sáng</span></div></a>
+      <a class="tile reveal d1" href="#lien-he"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&q=70" alt="Sơn Trà" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/sontra/900/700'"><span class="cnt">24 căn</span><div class="t"><b>Sơn Trà</b><span>Bán đảo xanh, biệt thự biển</span></div></a>
+      <a class="tile reveal d2" href="#lien-he"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=900&q=70" alt="Ngũ Hành Sơn" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/nguhanhson/900/700'"><span class="cnt">31 căn</span><div class="t"><b>Ngũ Hành Sơn</b><span>Resort, sân golf, gần Hội An</span></div></a>
+      <a class="tile reveal d3" href="#lien-he"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=900&q=70" alt="Hải Châu" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/haichau/900/700'"><span class="cnt">18 căn</span><div class="t"><b>Hải Châu</b><span>Trung tâm, sông Hàn, cầu Rồng</span></div></a>
+      <a class="tile reveal d4" href="#lien-he"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=70" alt="Mỹ An" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/myan/900/700'"><span class="cnt">22 căn</span><div class="t"><b>Mỹ An</b><span>Khu người nước ngoài, cà phê, gần biển</span></div></a>
+      <a class="tile reveal d5" href="#lien-he"><img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=70" alt="Hòa Hải" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hoahai/900/700'"><span class="cnt">9 căn</span><div class="t"><b>Hòa Hải</b><span>Biệt thự ven sông, yên tĩnh</span></div></a>
+      <a class="tile reveal d6" href="#lien-he"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=70" alt="An Thượng" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/anthuong/900/700'"><span class="cnt">11 căn</span><div class="t"><b>An Thượng</b><span>Phố Tây, nhà hàng, cuộc sống về đêm</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INVEST / SALES ================= -->
+<section class="sec invest" id="mua-ban">
+  <div class="wrap">
+    <div class="frame reveal">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=70" alt="Biệt thự có hồ bơi dành cho nhà đầu tư" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/investvilla/1200/1500'">
+      <div class="badge"><b>18</b><span>dự án đủ điều kiện bán cho người nước ngoài</span></div>
+    </div>
+    <div class="reveal d2">
+      <span class="eyebrow">Mua bán · Đầu tư</span>
+      <h2>Biệt thự và căn hộ cho <em>nhà đầu tư</em> nước ngoài <span class="soon">Sắp mở bán</span></h2>
+      <p class="lead">Chúng tôi đồng hành cùng nhà đầu tư Hàn Quốc, Trung Quốc, Nga và châu Âu từ lúc chọn dự án tới khi nhận dòng tiền cho thuê. Mọi hồ sơ pháp lý được kiểm tra trước khi bạn đặt cọc.</p>
+      <ul class="checks">
+        <li><i><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></i>Danh mục dự án được phép bán cho người nước ngoài, sổ hồng 50 năm</li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></i>Tư vấn pháp lý, hợp đồng song ngữ, hỗ trợ chuyển tiền và thuế</li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></i>Quản lý cho thuê sau khi mua, báo cáo lợi suất mỗi quý</li>
+      </ul>
+      <a class="btn btn-gold" href="#lien-he">Đăng ký nhận danh mục đầu tư <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="langrow">Tư vấn: <span>Tiếng Việt</span><span>English</span><span>한국어</span><span>中文</span><span>Русский</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="sec why" id="ve-chung-toi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow">Về chúng tôi</span>
+        <h2>Vì sao khách hàng quốc tế <em>chọn chúng tôi</em></h2>
+        <p>Đội ngũ tại 36 Bạch Đằng làm việc trực tiếp với chủ nhà và ban quản lý 18 dự án, nên bạn nhận thông tin chính xác và giá gốc.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="stat reveal"><b>120<small>+</small></b><span>căn hộ và biệt thự đang cho thuê, cập nhật hằng tuần</span></div>
+      <div class="stat reveal d1"><b>18</b><span>dự án và khu phức hợp hợp tác trực tiếp với chủ đầu tư</span></div>
+      <div class="stat reveal d2"><b>15<small>phút</small></b><span>thời gian phản hồi trung bình qua Zalo, WhatsApp, Telegram</span></div>
+      <div class="stat reveal d3"><b>0<small>đ</small></b><span>phí môi giới cho người thuê, chủ nhà chi trả toàn bộ</span></div>
+    </div>
+    <div class="quote reveal">
+      <div class="q">&ldquo;</div>
+      <p>Tôi gửi yêu cầu lúc 21 giờ, 15 phút sau đã có ba căn view biển kèm video. Hai ngày sau ký hợp đồng song ngữ, không mất một đồng phí.<small>Kim Ji-won · chuyên gia Hàn Quốc, thuê căn hộ tại Mỹ Khê</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARTICLES (light) ================= -->
+<section class="sec light" id="kinh-nghiem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow">Kinh nghiệm</span>
+        <h2>Hiểu Đà Nẵng trước khi ký hợp đồng</h2>
+        <p>Những bài viết ngắn, viết từ giao dịch thực tế, giúp bạn tránh các lỗi phổ biến khi thuê hoặc mua nhà.</p>
+      </div>
+      <a class="link-gold" href="#lien-he">Tất cả bài viết <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="arts">
+      <article class="art reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1200&q=70" alt="Cầu Vàng Đà Nẵng" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/goldenbridge/1200/750'"></div>
+        <div class="body">
+          <div class="cat">Pháp lý <span>6 phút đọc</span></div>
+          <h3>Điều người mua nước ngoài cần biết</h3>
+          <p>Sổ hồng 50 năm, hạn mức 30% căn hộ trong một dự án, thuế và các bước thanh toán an toàn khi mua nhà tại Việt Nam.</p>
+          <a class="link-gold" href="#lien-he">Đọc bài viết <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="art reveal d1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=70" alt="Nội thất căn hộ cao cấp" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/luxapt/1200/750'"></div>
+        <div class="body">
+          <div class="cat">Phong cách sống <span>5 phút đọc</span></div>
+          <h3>Chi tiết làm nên căn hộ cao cấp</h3>
+          <p>Từ hướng view, vật liệu, cách âm tới tiện ích tòa nhà: cách nhận biết một căn hộ thực sự xứng đáng với mức giá.</p>
+          <a class="link-gold" href="#lien-he">Đọc bài viết <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="art reveal d2">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=70" alt="Bãi biển lúc hoàng hôn" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/beachsunset/1200/750'"></div>
+        <div class="body">
+          <div class="cat">Khu vực <span>7 phút đọc</span></div>
+          <h3>Mỹ Khê, An Thượng hay Hải Châu: chọn khu nào</h3>
+          <p>So sánh ba khu được người nước ngoài ưa chuộng nhất theo giá thuê, tiện ích, giao thông và nhịp sống hằng ngày.</p>
+          <a class="link-gold" href="#lien-he">Đọc bài viết <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT (light) ================= -->
+<section class="sec contact" id="lien-he">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Liên hệ</span>
+      <h2>Để lại yêu cầu, nhận danh sách phù hợp <em style="color:var(--gold3)">trong 15 phút</em></h2>
+      <p class="lead">Chọn kênh bạn quen dùng. Chúng tôi trả lời bằng tiếng Việt, English, 한국어, 中文 hoặc Русский, từ 8:00 đến 21:00 mỗi ngày.</p>
+      <div class="msgs">
+        <a class="msg zalo" href="https://zalo.me/842363888999" target="_blank" rel="noopener"><i>Z</i><span>Zalo<small>Nhanh nhất tại Việt Nam</small></span></a>
+        <a class="msg wa" href="https://wa.me/842363888999" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg></i><span>WhatsApp<small>Khách quốc tế</small></span></a>
+        <a class="msg tg" href="https://t.me/dananghomesliving" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M21.5 3.6 2.9 10.8c-1.3.5-1.3 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15c.3-1.3-.5-1.9-1.4-1.6zM8.6 13.3l9.5-6-7.6 6.9-.3 3.3-1.6-4.2z"/></svg></i><span>Telegram<small>Khách Nga, châu Âu</small></span></a>
+        <a class="msg fb" href="https://m.me/dananghomesliving" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.3S17.5 2 12 2zm1 12.5-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg></i><span>Messenger<small>Facebook</small></span></a>
+      </div>
+      <div class="cinfo">
+        <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Gọi trực tiếp: <a href="tel:+842363888999">+84 236 3888 999</a></span></div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Văn phòng: 36 Bạch Đằng, quận Hải Châu, Đà Nẵng</span></div>
+        <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mở cửa 8:00 - 21:00, tất cả các ngày trong tuần</span></div>
+      </div>
+    </div>
+    <form class="form reveal d2" id="leadForm" novalidate>
+      <h3>Gửi yêu cầu tìm nhà</h3>
+      <p class="sub">Điền 3 dòng, chúng tôi gửi danh sách phù hợp kèm video thực tế.</p>
+      <div class="f"><label for="fname">Họ và tên</label><input id="fname" type="text" name="name" placeholder="Nguyễn Minh Anh" autocomplete="name"></div>
+      <div class="f"><label for="fphone">Số điện thoại hoặc Zalo / WhatsApp / Telegram</label><input id="fphone" type="tel" name="contact" placeholder="+84 ... hoặc @username" autocomplete="tel"></div>
+      <div class="f"><label for="fneed">Bạn đang tìm gì?</label><textarea id="fneed" name="need" placeholder="Ví dụ: căn hộ 1PN view biển Mỹ Khê, dưới $1,000, thuê 12 tháng từ tháng 11"></textarea></div>
+      <button class="btn btn-dark" type="submit">Gửi yêu cầu <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="note">Không thu phí người thuê. Thông tin của bạn chỉ dùng để tư vấn, không chia sẻ cho bên thứ ba.</p>
+      <div class="ok" hidden>Đã nhận yêu cầu. Chuyên viên sẽ liên hệ với bạn trong 15 phút qua kênh bạn để lại.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#top"><span class="mark">DH</span><span class="name">Da Nang Homes<small>&amp; Living</small></span></a>
+        <p class="about">Đại lý bất động sản cao cấp tại Đà Nẵng cho khách hàng trong nước và quốc tế. Cho thuê dài hạn, mua bán, quản lý cho thuê.</p>
+        <div class="langs" role="group" aria-label="Ngôn ngữ">
+          <button type="button" class="on">VI</button><button type="button">EN</button><button type="button">RU</button><button type="button">ZH</button><button type="button">KO</button>
+        </div>
+      </div>
+      <div>
+        <h4>Dịch vụ</h4>
+        <ul><li><a href="#cho-thue">Cho thuê</a></li><li><a href="#mua-ban">Mua bán</a></li><li><a href="#khu-vuc">Khu vực</a></li><li><a href="#kinh-nghiem">Kinh nghiệm</a></li><li><a href="#ve-chung-toi">Về chúng tôi</a></li></ul>
+      </div>
+      <div>
+        <h4>Khu vực</h4>
+        <ul><li><a href="#khu-vuc">Sơn Trà</a></li><li><a href="#khu-vuc">Ngũ Hành Sơn</a></li><li><a href="#khu-vuc">Hải Châu</a></li><li><a href="#khu-vuc">Mỹ An</a></li><li><a href="#khu-vuc">Hòa Hải</a></li><li><a href="#khu-vuc">An Thượng</a></li><li><a href="#khu-vuc">Mỹ Khê</a></li></ul>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><a href="tel:+842363888999">+84 236 3888 999</a></li>
+          <li>36 Bạch Đằng, Hải Châu, Đà Nẵng</li>
+          <li>Zalo · WhatsApp · Telegram · Messenger</li>
+          <li>8:00 - 21:00, mọi ngày trong tuần</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Da Nang Homes &amp; Living. Bảo lưu mọi quyền.</span>
+      <span>Chính sách bảo mật · Điều khoản sử dụng</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating messenger bar (mobile) -->
+<div class="fab" aria-label="Nhắn Zalo hoặc WhatsApp">
+  <a class="z" href="https://zalo.me/842363888999" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.9 2 10.7c0 2.7 1.4 5.1 3.6 6.7L5 22l4.6-2.1c.8.2 1.6.3 2.4.3 5.5 0 10-3.9 10-8.8S17.5 2 12 2zm-4 12h-2l3-5H7V7h4.5v1.5L8.5 13H11v1H8zm6.5 0h-1.2v-.6a2.2 2.2 0 0 1-1.4.6c-1.3 0-2.3-1.2-2.3-2.7s1-2.7 2.3-2.7c.5 0 1 .2 1.4.6V9h1.2v5zm2.7 0h-1.2V7h1.2v7z"/></svg>Nhắn Zalo</a>
+  <a class="w" href="https://wa.me/842363888999" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  var burger=document.getElementById('burger');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* header state */
+  function onScroll(){hdr.classList.toggle('scrolled',window.scrollY>40);}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  /* mobile menu */
+  burger.addEventListener('click',function(){
+    var open=hdr.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  hdr.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){hdr.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
+
+  /* language switcher (decorative) */
+  document.querySelectorAll('.langs').forEach(function(g){
+    g.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        g.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on');
+      });
+    });
+  });
+
+  /* reveal on scroll */
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  }
+
+  /* search -> listings */
+  document.getElementById('searchBtn').addEventListener('click',function(){
+    document.getElementById('cho-thue').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  });
+
+  /* lead form (prototype: no backend) */
+  var f=document.getElementById('leadForm');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var phone=f.querySelector('#fphone');
+    if(!phone.value.trim()){phone.focus();phone.style.borderColor='#C0392B';return;}
+    f.querySelector('.ok').hidden=false;
+    f.querySelector('button[type=submit]').disabled=true;
+    f.querySelector('button[type=submit]').style.opacity='.6';
+  });
+})();
+</script>
+</body>
+</html>

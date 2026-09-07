@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Da Nang Homes &amp; Living — 3 hướng thiết kế website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#ffffff; --paper:#f5f5f5; --border:#e5e5e5; --text:#171717; --muted:#525252;
+    --muted-2:#737373; --accent:#2563eb; --radius:12px; --radius-sm:8px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--text);font:400 14px/1.43 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:48px 20px 64px}
+  header{margin-bottom:32px}
+  .eyebrow{font-size:11px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin:0 0 8px}
+  h1{font-size:30px;line-height:1.38;letter-spacing:-.02em;font-weight:600;margin:0 0 8px}
+  .lede{font-size:16px;line-height:1.5;color:var(--muted);margin:0;max-width:640px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+  .card{background:var(--canvas);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
+        transition:transform .18s ease, box-shadow .18s ease}
+  .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+  .shot{display:block;width:100%;aspect-ratio:900/575;object-fit:cover;object-position:top center;border-bottom:1px solid var(--border);background:var(--paper)}
+  .body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .tag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;border-radius:9999px;padding:4px 10px;font-size:11px;line-height:1.5;font-weight:500;background:var(--paper);color:var(--muted)}
+  .tag i{width:8px;height:8px;border-radius:9999px;display:inline-block}
+  h2{font-size:20px;line-height:1.4;font-weight:600;margin:0}
+  .desc{font-size:13px;line-height:1.45;color:var(--muted);margin:0;flex:1}
+  .who{font-size:12px;line-height:1.4;color:var(--muted-2);margin:0}
+  .actions{display:flex;gap:8px;margin-top:8px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:var(--radius-sm);padding:10px 14px;font-size:14px;font-weight:500;text-decoration:none;flex:1}
+  .btn-p{background:var(--accent);color:#fff}
+  .btn-s{background:var(--canvas);color:var(--text);border:1px solid #d4d4d4}
+  .note{margin-top:32px;padding:16px;background:var(--canvas);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;line-height:1.45;color:var(--muted)}
+  footer{margin-top:24px;font-size:12px;line-height:1.4;color:var(--muted-2)}
+  @media (max-width:900px){ .grid{grid-template-columns:1fr} h1{font-size:24px} .wrap{padding:32px 16px 48px} }
+  @media (prefers-reduced-motion:reduce){ .card{transition:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Da Nang Homes &amp; Living</p>
+    <h1>Ba hướng thiết kế website</h1>
+    <p class="lede">Ba bản mẫu hoạt động thật: bấm vào từng bản để xem, thử bộ lọc và mở trên điện thoại. Dữ liệu căn hộ và giá lấy từ danh sách hiện có.</p>
+  </header>
+
+  <div class="grid">
+    <article class="card">
+      <img class="shot" src="shots/search-desktop.jpg" alt="Hướng 1: tìm kiếm">
+      <div class="body">
+        <span class="tag"><i style="background:#2563eb"></i>Hướng 1</span>
+        <h2>Tìm kiếm nhanh</h2>
+        <p class="desc">Website hoạt động như một dịch vụ tìm nhà: bộ lọc ngay màn hình đầu, giá hiển thị lớn, danh sách cập nhật liên tục, nút nhắn Zalo và WhatsApp luôn trong tầm tay.</p>
+        <p class="who">Phù hợp: người nước ngoài và khách Nga đang so sánh nhiều lựa chọn.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="search.html">Xem bản mẫu</a>
+          <a class="btn btn-s" href="shots/search-mobile.jpg">Điện thoại</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="shot" src="shots/editorial-desktop.jpg" alt="Hướng 2: tạp chí">
+      <div class="body">
+        <span class="tag"><i style="background:#b8860b"></i>Hướng 2</span>
+        <h2>Tạp chí cao cấp</h2>
+        <p class="desc">Phiên bản sang trọng hơn của website hiện tại: chữ lớn, ảnh khổ rộng, từng căn được trình bày như một trang tạp chí, khu vực chọn theo bản đồ nền xanh đậm.</p>
+        <p class="who">Phù hợp: biệt thự và căn hộ cao cấp, khách xem để cảm nhận.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="editorial.html">Xem bản mẫu</a>
+          <a class="btn btn-s" href="shots/editorial-mobile.jpg">Điện thoại</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="shot" src="shots/dark-desktop.jpg" alt="Hướng 3: tối, đầu tư">
+      <div class="body">
+        <span class="tag"><i style="background:#071d36"></i>Hướng 3</span>
+        <h2>Tối, dành cho nhà đầu tư</h2>
+        <p class="desc">Nền xanh đêm và điểm nhấn vàng, mở đầu bằng con số lợi suất và thời hạn sở hữu, tập trung vào biệt thự và mua để đầu tư.</p>
+        <p class="who">Phù hợp: khách Hàn Quốc, Trung Quốc, nhà đầu tư mua để cho thuê.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="dark.html">Xem bản mẫu</a>
+          <a class="btn btn-s" href="shots/dark-mobile.jpg">Điện thoại</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <p class="note">Đây là bản mẫu để chọn hướng, chưa phải website hoàn chỉnh. Ảnh minh hoạ lấy từ kho ảnh miễn phí, nút chuyển ngôn ngữ chỉ để xem bố cục. Sau khi chọn hướng, website thật sẽ lấy dữ liệu trực tiếp từ danh sách căn hộ, có tiếng Việt, Anh, Nga, Trung, Hàn và gửi yêu cầu khách hàng thẳng về máy của đội ngũ.</p>
+  <footer>Bản mẫu nội bộ · 2026</footer>
+</div>
+</body>
+</html>
