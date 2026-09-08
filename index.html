@@ -141,20 +141,21 @@
 </div>
 <script>
   (function(){
-    var cards = document.querySelectorAll('.card');
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      cards.forEach(function(c){ c.classList.add('in'); });
-      return;
-    }
+    var cards = [].slice.call(document.querySelectorAll('.card'));
+    var reveal = function(el, delay){ setTimeout(function(){ el.classList.add('in'); }, delay || 0); };
+    var showAll = function(){ cards.forEach(function(c){ c.classList.add('in'); }); };
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { showAll(); return; }
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e, i){
+      entries.forEach(function(e){
         if (!e.isIntersecting) return;
-        var el = e.target;
-        setTimeout(function(){ el.classList.add('in'); }, i * 70);
-        io.unobserve(el);
+        reveal(e.target, cards.indexOf(e.target) % 3 * 70);
+        io.unobserve(e.target);
       });
-    }, { rootMargin: '0px 0px -40px 0px' });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
     cards.forEach(function(c){ io.observe(c); });
+    // страховка: что бы ни случилось с наблюдателем, через 2 секунды карточки видны
+    setTimeout(showAll, 2000);
+    window.addEventListener('load', function(){ setTimeout(showAll, 1200); });
   })();
 </script>
 </body>
