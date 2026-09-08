@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Da Nang Homes &amp; Living · SEO, nội dung tự động và trang quản trị</title>
+<title>Da Nang Homes &amp; Living · Lộ trình công việc</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --canvas:#ffffff; --paper:#f5f5f5; --alt:#fafafa; --border:#e5e5e5;
+    --canvas:#ffffff; --paper:#f5f5f5; --alt:#fafafa; --border:#e5e5e5; --border-2:#d4d4d4;
     --text:#171717; --muted:#525252; --muted-2:#737373;
     --accent:#2563eb; --accent-2:#1e40af; --accent-soft:#dbeafe;
+    --site:#2563eb; --content:#7c3aed; --social:#0891b2; --cab:#b45309;
     --green:#166534; --mint:#dcfce7; --orange:#ea580c; --amber:#fef3c7;
     --r-lg:16px; --r-md:12px; --r-sm:8px; --r-pill:9999px;
   }
@@ -38,14 +39,14 @@
   .hero{padding:56px 0 8px}
   .eyebrow{font-size:11px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin:0 0 12px}
   h1{font-size:30px;line-height:1.38;letter-spacing:-.02em;font-weight:600;margin:0 0 12px}
-  .lede{font-size:16px;line-height:1.5;color:var(--muted);margin:0;max-width:690px}
+  .lede{font-size:16px;line-height:1.5;color:var(--muted);margin:0;max-width:700px}
 
   section{padding:44px 0;scroll-margin-top:70px}
   .sec-n{display:inline-block;font-size:11px;line-height:1.5;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-2);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin-bottom:10px}
   h2{font-size:24px;line-height:1.33;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}
   h3{font-size:16px;line-height:1.5;font-weight:600;margin:0 0 6px}
   h4{font-size:14px;line-height:1.43;font-weight:600;margin:0 0 4px}
-  .sub{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 20px;max-width:690px}
+  .sub{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 20px;max-width:700px}
   p{margin:0 0 12px}
 
   .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -55,17 +56,30 @@
 
   .callout{background:var(--canvas);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r-md);padding:20px;margin-top:16px}
   .callout.warn{border-left-color:var(--orange)}
-  .callout.good{border-left-color:var(--green)}
   .callout p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 8px}
   .callout p:last-child{margin:0}
   .callout b{color:var(--text);font-weight:500}
 
-  .block{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;margin-top:12px}
-  .block-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  /* ===== карта работ по неделям ===== */
+  .map-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 16px 14px}
+  .map{min-width:820px;display:grid;grid-template-columns:150px repeat(12,1fr);column-gap:5px;row-gap:9px;align-items:center}
+  .map .wkh{font-size:10px;line-height:1.4;color:var(--muted-2);text-align:center;padding-bottom:6px;border-bottom:1px solid var(--border)}
+  .map .corner{border-bottom:1px solid var(--border);padding-bottom:6px;font-size:10px;line-height:1.4;color:var(--muted-2);letter-spacing:.04em;text-transform:uppercase}
+  .map .lane{font-size:12.5px;line-height:1.35;font-weight:500;padding-right:10px}
+  .map .lane s{display:inline-block;width:8px;height:8px;border-radius:var(--r-pill);margin-right:7px;text-decoration:none;vertical-align:middle}
+  .bar{border-radius:var(--r-pill);padding:8px 13px;font-size:11.5px;line-height:1.3;color:#fff;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar.site{background:var(--site)} .bar.content{background:var(--content)}
+  .bar.social{background:var(--social)} .bar.cab{background:var(--cab)}
+  .bar.soft{opacity:.42}
+  .map-note{font-size:12px;line-height:1.5;color:var(--muted-2);margin:12px 0 0}
+
+  /* ===== этапы ===== */
+  .stage{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;margin-top:12px;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+  .stage-n{width:44px;height:44px;border-radius:var(--r-pill);display:grid;place-items:center;font-size:16px;font-weight:600;color:#fff}
+  .stage-n.site{background:var(--site)} .stage-n.content{background:var(--content)}
+  .stage-n.social{background:var(--social)} .stage-n.cab{background:var(--cab)}
+  .stage-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
   .badge{font-size:11px;line-height:1.5;font-weight:500;padding:3px 10px;border-radius:var(--r-pill);background:var(--paper);color:var(--muted);white-space:nowrap}
-  .badge.ok{background:var(--mint);color:var(--green)}
-  .badge.now{background:var(--accent-soft);color:var(--accent-2)}
-  .badge.later{background:var(--amber);color:#92400e}
   .note{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 6px}
   ul{margin:8px 0 0;padding-left:18px}
   li{font-size:13px;line-height:1.55;color:var(--muted);margin-bottom:5px}
@@ -78,19 +92,11 @@
   .flow-step b{display:block;font-size:11px;line-height:1.5;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-bottom:4px}
   .flow-step span{display:block;font-size:12.5px;line-height:1.45;color:var(--text)}
 
-  .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-  .screen{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-md);padding:16px}
-  .screen h4{display:flex;align-items:center;gap:8px}
+  .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .screen{background:var(--alt);border:1px solid var(--border);border-radius:var(--r-md);padding:14px}
+  .screen h4{display:flex;align-items:center;gap:8px;font-size:13.5px}
   .dot{width:8px;height:8px;border-radius:var(--r-pill);flex:none}
   .screen p{font-size:12.5px;line-height:1.5;color:var(--muted);margin:6px 0 0}
-
-  table{width:100%;border-collapse:collapse;background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden}
-  th,td{text-align:left;padding:11px 14px;font-size:13px;line-height:1.45;border-bottom:1px solid var(--border);vertical-align:top}
-  th{font-size:11px;line-height:1.5;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-2);font-weight:500;background:var(--alt)}
-  tr:last-child td{border-bottom:0}
-  td b{font-weight:500}
-  .w{display:inline-block;min-width:52px;font-weight:500}
-  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r-md)}
 
   .need{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   .need-item{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-md);padding:16px}
@@ -109,6 +115,15 @@
     h1{font-size:24px} h2{font-size:20px}
     .hero{padding:40px 0 4px} section{padding:32px 0}
   }
+  @media (max-width:620px){
+    /* русская подпись в шапке длиннее вьетнамской и выталкивала переключатель языков */
+    .brand{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+    .brand i{display:none}
+  }
+  @media (max-width:560px){
+    .stage{grid-template-columns:1fr;gap:10px}
+    .stage-n{width:36px;height:36px;font-size:14px}
+  }
   @media (prefers-reduced-motion:reduce){ .rev{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
 </style>
 </head>
@@ -116,12 +131,12 @@
 
 <header class="top">
   <div class="wrap top-in">
-    <div class="brand">Da Nang Homes &amp; Living <i data-vi>· Kế hoạch</i><i data-ru>· План</i></div>
+    <div class="brand">Da Nang Homes &amp; Living <i data-vi>· Lộ trình</i><i data-ru>· Дорожная карта</i></div>
     <nav class="toc">
       <a href="#now" data-vi>Hiện trạng</a><a href="#now" data-ru>Сейчас</a>
-      <a href="#seo" data-vi>Máy SEO</a><a href="#seo" data-ru>SEO-машина</a>
-      <a href="#cabinet" data-vi>Trang quản trị</a><a href="#cabinet" data-ru>SEO-кабинет</a>
-      <a href="#social" data-vi>Mạng xã hội</a><a href="#social" data-ru>Соцсети</a>
+      <a href="#map" data-vi>Bản đồ</a><a href="#map" data-ru>Карта</a>
+      <a href="#stages" data-vi>Các giai đoạn</a><a href="#stages" data-ru>Этапы</a>
+      <a href="#start" data-vi>Để bắt đầu</a><a href="#start" data-ru>Чтобы начать</a>
     </nav>
     <div class="lang">
       <button id="b-vi" class="on" onclick="setLang('vi')">VI</button>
@@ -133,14 +148,16 @@
 <div class="wrap">
 
   <div class="hero rev">
-    <p class="eyebrow" data-vi>Kế hoạch công việc · tháng 9 năm 2026</p>
-    <p class="eyebrow" data-ru>План работ · сентябрь 2026</p>
-    <h1 data-vi>Máy tìm khách: SEO, bài viết tự động và một trang quản trị để nhìn thấy kết quả</h1>
-    <h1 data-ru>Машина привлечения: SEO, автоматические статьи и кабинет, где виден результат</h1>
+    <p class="eyebrow" data-vi>Lộ trình công việc · tháng 9 năm 2026</p>
+    <p class="eyebrow" data-ru>Дорожная карта · сентябрь 2026</p>
+    <h1 data-vi>Lộ trình: từ website vô hình tới dòng khách tự đến</h1>
+    <h1 data-ru>Дорожная карта: от невидимого сайта до потока клиентов</h1>
+    <p class="lede" data-vi>Toàn bộ công việc chia theo giai đoạn: làm gì, theo thứ tự nào, và sau mỗi bước anh chị nhìn thấy kết quả gì.</p>
+    <p class="lede" data-ru>Вся работа по этапам: что делается, в каком порядке и что вы увидите после каждого шага.</p>
   </div>
 
   <section id="now" class="rev">
-    <span class="sec-n" data-vi>Phần 1</span><span class="sec-n" data-ru>Часть 1</span>
+    <span class="sec-n" data-vi>Điểm xuất phát</span><span class="sec-n" data-ru>Точка старта</span>
     <h2 data-vi>Hiện trạng: cái gì đã chạy, cái gì đang chặn</h2>
     <h2 data-ru>Сейчас: что работает и что мешает</h2>
     <div class="tiles">
@@ -150,205 +167,302 @@
       <div class="tile"><b data-vi>4 bài</b><b data-ru>4 текста</b><span data-vi>là toàn bộ nội dung website</span><span data-ru>это весь контент сайта</span></div>
     </div>
     <div class="callout warn">
-      <p data-vi><b>Ở tầm giá này, tìm khách chủ động không đủ nuôi công ty.</b> Căn rẻ nhất là 845 USD. Trong 188 khách bị loại, 130 người có ngân sách thấp hơn mức đó, 41 người chỉ thuê dưới ba tháng. Một ngày qua còn chưa tới một khách phù hợp. Người trả từ 900 USD không hỏi trong nhóm chat, họ gõ vào Google.</p>
-      <p data-ru><b>При таком ценнике активный поиск не кормит.</b> Самый дешёвый объект 845 долларов. Из 188 отсеянных 130 искали дешевле, 41 снимали меньше трёх месяцев. За сутки остаётся меньше одного подходящего. Тот, кто платит от 900 долларов, не пишет в чаты, он ищет в Google.</p>
-      <p data-vi><b>Còn website thì hiện vô hình.</b> Không có robots.txt và sitemap, mô tả giống hệt nhau ở mọi ngôn ngữ, địa chỉ chia sẻ trỏ về tên miền kỹ thuật, toàn bộ nội dung là bốn bài. Tìm theo tên miền trên Google: không ra trang nào.</p>
-      <p data-ru><b>А сайт сейчас невидим.</b> Нет robots.txt и карты сайта, описания одинаковые на всех языках, адрес для соцсетей ведёт на технический домен, весь контент это четыре текста. Поиск по домену в Google: ноль страниц.</p>
+      <p data-vi><b>Website hiện vô hình với Google.</b> Không có robots.txt và sitemap, mô tả giống hệt nhau ở mọi ngôn ngữ, địa chỉ chia sẻ trỏ về tên miền kỹ thuật, toàn bộ nội dung là bốn bài. Tìm theo tên miền trên Google: không ra trang nào.</p>
+      <p data-ru><b>Сайт сейчас невидим для Google.</b> Нет robots.txt и карты сайта, описания одинаковые на всех языках, адрес для соцсетей ведёт на технический домен, весь контент это четыре текста. Поиск по домену в Google: ноль страниц.</p>
+      <p data-vi><b>Người trả từ 900 USD không hỏi trong nhóm chat, họ gõ vào Google.</b> Vì vậy toàn bộ lộ trình xoay quanh việc để khách tự tìm đến, thay vì mình đi tìm khách.</p>
+      <p data-ru><b>Тот, кто платит от 900 долларов, не пишет в чаты, он ищет в Google.</b> Поэтому вся дорожная карта строится вокруг входящего потока, а не поиска вручную.</p>
     </div>
   </section>
 
-  <section id="seo" class="rev">
-    <span class="sec-n" data-vi>Phần 2 · phần chính</span><span class="sec-n" data-ru>Часть 2 · главное</span>
-    <h2 data-vi>Máy SEO</h2>
-    <h2 data-ru>SEO-машина</h2>
-    <p class="sub" data-vi>Không phải «viết vài bài cho có». Đây là dây chuyền năm khâu, khâu nào cũng đo được và khâu nào cũng tự chạy sau khi dựng xong.</p>
-    <p class="sub" data-ru>Не «написать пару статей», а конвейер из пяти звеньев. Каждое измеримо и каждое после настройки работает само.</p>
+  <section id="map" class="rev">
+    <span class="sec-n" data-vi>Bản đồ</span><span class="sec-n" data-ru>Карта</span>
+    <h2 data-vi>Toàn bộ công việc trên một bản đồ</h2>
+    <h2 data-ru>Вся работа на одной карте</h2>
+    <p class="sub" data-vi>Bốn hướng chạy song song. Bên dưới là chi tiết từng giai đoạn.</p>
+    <p class="sub" data-ru>Четыре направления идут параллельно. Ниже подробности по каждому этапу.</p>
 
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>2.1 · Bộ từ khoá: gom toàn bộ nhu cầu thuê nhà Đà Nẵng</h3>
-        <h3 data-ru>2.1 · Семантическое ядро: собрать весь спрос по аренде в Дананге</h3>
-        <span class="badge now" data-vi>tuần 1 tới 2</span><span class="badge now" data-ru>недели 1 - 2</span>
+    <div class="map-scroll">
+      <div class="map">
+        <div class="corner" style="grid-column:1;grid-row:1"><span data-vi>Tuần</span><span data-ru>Недели</span></div>
+        <div class="wkh" style="grid-column:2;grid-row:1">1</div>
+        <div class="wkh" style="grid-column:3;grid-row:1">2</div>
+        <div class="wkh" style="grid-column:4;grid-row:1">3</div>
+        <div class="wkh" style="grid-column:5;grid-row:1">4</div>
+        <div class="wkh" style="grid-column:6;grid-row:1">5</div>
+        <div class="wkh" style="grid-column:7;grid-row:1">6</div>
+        <div class="wkh" style="grid-column:8;grid-row:1">7</div>
+        <div class="wkh" style="grid-column:9;grid-row:1">8</div>
+        <div class="wkh" style="grid-column:10;grid-row:1">9</div>
+        <div class="wkh" style="grid-column:11;grid-row:1">10</div>
+        <div class="wkh" style="grid-column:12;grid-row:1">11</div>
+        <div class="wkh" style="grid-column:13;grid-row:1">12</div>
+
+        <div class="lane" style="grid-column:1;grid-row:2"><s style="background:var(--site)"></s><span data-vi>Website và kỹ thuật</span><span data-ru>Сайт и техника</span></div>
+        <div class="bar site" style="grid-column:2 / span 2;grid-row:2"><span data-vi>Kỹ thuật, kênh liên hệ</span><span data-ru>Техника, каналы связи</span></div>
+        <div class="bar site" style="grid-column:4 / span 3;grid-row:2"><span data-vi>Khung: khu vực, toà nhà, căn</span><span data-ru>Каркас: районы, комплексы, объекты</span></div>
+        <div class="bar site" style="grid-column:9 / span 5;grid-row:2"><span data-vi>Thiết kế lại và tính năng bán hàng</span><span data-ru>Редизайн и функции продаж</span></div>
+
+        <div class="lane" style="grid-column:1;grid-row:3"><s style="background:var(--content)"></s><span data-vi>Nhu cầu và nội dung</span><span data-ru>Спрос и контент</span></div>
+        <div class="bar content" style="grid-column:3 / span 2;grid-row:3"><span data-vi>Bộ từ khoá, đối thủ</span><span data-ru>Ядро, конкуренты</span></div>
+        <div class="bar content" style="grid-column:5 / span 9;grid-row:3"><span data-vi>Bài viết, 5 tới 10 mỗi tuần, ba ngôn ngữ</span><span data-ru>Статьи, 5 - 10 в неделю, три языка</span></div>
+
+        <div class="lane" style="grid-column:1;grid-row:4"><s style="background:var(--social)"></s><span data-vi>Mạng xã hội</span><span data-ru>Соцсети</span></div>
+        <div class="bar social" style="grid-column:6 / span 3;grid-row:4"><span data-vi>Trang thương hiệu, đăng tự động</span><span data-ru>Страницы бренда, автопостинг</span></div>
+        <div class="bar social soft" style="grid-column:9 / span 5;grid-row:4"><span data-vi>Dòng bài đều đặn</span><span data-ru>Ровный поток</span></div>
+
+        <div class="lane" style="grid-column:1;grid-row:5"><s style="background:var(--cab)"></s><span data-vi>Trang quản trị</span><span data-ru>Кабинет</span></div>
+        <div class="bar cab" style="grid-column:6 / span 2;grid-row:5"><span data-vi>Bản đầu tiên</span><span data-ru>Первая версия</span></div>
+        <div class="bar cab soft" style="grid-column:8 / span 6;grid-row:5"><span data-vi>Thứ hạng, việc cần làm, tiền</span><span data-ru>Позиции, находки, деньги</span></div>
       </div>
-      <ul>
-        <li data-vi><b>Năm ngôn ngữ cùng lúc:</b> Việt, Anh, Nga, Hàn, Trung. Mỗi nhóm khách gõ một kiểu: người Việt tìm «thuê căn hộ Sơn Trà», người Nga tìm «аренда квартиры Дананг», người Hàn tìm «다낭 월세». Ba bộ từ khoá khác nhau, ba nhóm trang khác nhau.</li>
-        <li data-ru><b>Пять языков сразу:</b> вьетнамский, английский, русский, корейский, китайский. Каждая аудитория ищет по-своему: вьетнамец «thuê căn hộ Sơn Trà», русский «аренда квартиры Дананг», кореец «다낭 월세». Это разные ядра и разные наборы страниц.</li>
-        <li data-vi><b>Nguồn:</b> gợi ý của Google và YouTube, công cụ từ khoá, những truy vấn mà đối thủ đang đứng, và một nguồn không ai có: <b>327 yêu cầu thật</b> mà hệ thống đã thu được, viết bằng chính lời của khách.</li>
-        <li data-ru><b>Источники:</b> подсказки Google и YouTube, планировщики ключевых слов, запросы, по которым стоят конкуренты, и источник, которого нет ни у кого: <b>327 живых обращений</b>, собранных системой, написанных словами самих клиентов.</li>
-        <li data-vi><b>Gom nhóm theo kết quả tìm kiếm thật,</b> không theo cảm tính: hai truy vấn nằm cùng một nhóm nếu Google trả về cùng những trang. Cách này chúng tôi đã dùng ở dự án khác, nó tách được những cụm từ đọc bằng mắt tưởng giống nhau nhưng Google hiểu hoàn toàn khác.</li>
-        <li data-ru><b>Кластеризация по живой выдаче,</b> а не на глаз: два запроса в одной группе, если Google показывает по ним одни и те же страницы. Этот приём мы уже применяли в другом проекте, он развёл фразы, которые на вид одинаковы, а Google понимает их совсем по-разному.</li>
-        <li data-vi><b>Mọi thứ nằm trong một cơ sở dữ liệu,</b> không phải file Excel: truy vấn, tần suất, ngôn ngữ, nhóm, ai đang đứng đầu, trang nào của mình phải trả lời. Cập nhật hàng tuần, không phải làm một lần rồi quên.</li>
-        <li data-ru><b>Всё лежит в базе,</b> а не в файле Excel: запрос, частота, язык, кластер, кто в топе, какая наша страница отвечает. Обновляется еженедельно, а не собирается один раз и забывается.</li>
-      </ul>
-      <div class="res" data-vi><b>Kết quả:</b> bản đồ nhu cầu. Ước tính vài nghìn truy vấn và khoảng 150 tới 300 nhóm. Mọi việc còn lại đều lấy thứ tự ưu tiên từ bản đồ này, không lấy từ cảm giác.</div>
-      <div class="res" data-ru><b>Результат:</b> карта спроса. Ориентир: несколько тысяч запросов и 150 - 300 кластеров. Вся дальнейшая работа берёт приоритеты отсюда, а не из ощущений.</div>
+    </div>
+    <p class="map-note" data-vi>Tuần được tính từ lúc bắt đầu, không phải từ ngày gửi tài liệu này. Thời gian là ước tính và phụ thuộc vào việc mở quyền truy cập website.</p>
+    <p class="map-note" data-ru>Недели считаются от старта, а не от даты этого документа. Сроки ориентировочные и зависят от того, когда откроют доступ к сайту.</p>
+  </section>
+
+  <section id="stages" class="rev">
+    <span class="sec-n" data-vi>Chi tiết</span><span class="sec-n" data-ru>Подробности</span>
+    <h2 data-vi>Bảy giai đoạn</h2>
+    <h2 data-ru>Семь этапов</h2>
+    <p class="sub" data-vi>Mỗi giai đoạn kết thúc bằng một kết quả nhìn thấy được, không phải bằng một báo cáo.</p>
+    <p class="sub" data-ru>Каждый этап заканчивается видимым результатом, а не отчётом.</p>
+
+    <div class="stage">
+      <div class="stage-n site">1</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Nền móng: kỹ thuật tìm kiếm và kênh liên hệ</h3>
+          <h3 data-ru>Фундамент: техника поиска и каналы связи</h3>
+          <span class="badge" data-vi>tuần 1 tới 2</span><span class="badge" data-ru>недели 1 - 2</span>
+        </div>
+        <p class="note" data-vi>Không có bước này thì mọi việc còn lại đổ sông đổ biển: Google không thấy website, còn khách vào rồi cũng không biết nhắn cho ai.</p>
+        <p class="note" data-ru>Без этого шага всё остальное впустую: Google сайт не видит, а зашедший человек не понимает, куда написать.</p>
+        <ul>
+          <li data-vi>robots.txt và sitemap tự cập nhật khi có căn mới hoặc bài mới, kết nối Google Search Console và Bing, gửi trang mới đi lập chỉ mục ngay khi xuất bản.</li>
+          <li data-ru>robots.txt и карта сайта, обновляемые при каждом новом объекте или статье, подключение Google Search Console и Bing, отправка новых страниц на индексацию сразу после публикации.</li>
+          <li data-vi>Tiêu đề và mô tả riêng cho từng trang và từng ngôn ngữ, thay cho một mô tả dùng chung như hiện nay. Địa chỉ trang đọc được thay cho dạng «c-n-h-sang-tr-ng-ho-01».</li>
+          <li data-ru>Свои заголовки и описания для каждой страницы и языка вместо одного общего, как сейчас. Человеческие адреса вместо «c-n-h-sang-tr-ng-ho-01».</li>
+          <li data-vi>Đánh dấu dữ liệu cho căn hộ, công ty và câu hỏi thường gặp, để Google hiển thị giá và địa chỉ ngay trong kết quả. Liên kết ngôn ngữ đúng chuẩn cho năm phiên bản.</li>
+          <li data-ru>Разметка объектов, компании и вопросов, чтобы Google показывал цену и адрес прямо в выдаче. Правильные языковые связи для пяти версий.</li>
+          <li data-vi><b>Kênh liên hệ:</b> Zalo, WhatsApp, Telegram, Messenger cạnh mỗi căn và cố định ở đáy màn hình điện thoại. Yêu cầu chạy thẳng vào bot trong vài giây, ngoài giờ có trả lời tự động bằng đúng ngôn ngữ khách viết.</li>
+          <li data-ru><b>Каналы связи:</b> Zalo, WhatsApp, Telegram, Messenger рядом с каждым объектом и закреплённой полосой внизу экрана телефона. Заявка попадает в бот за секунды, вне рабочих часов работает автоответ на языке обращения.</li>
+          <li data-vi><b>Hồ sơ Google Business Profile</b> với ảnh, giờ làm việc, khu vực phục vụ và quy trình thu thập đánh giá. Với môi giới địa phương, đây thường là nguồn khách lớn hơn cả website.</li>
+          <li data-ru><b>Карточка Google Business Profile</b> с фото, часами, зоной работы и процессом сбора отзывов. Для местного агентства это часто больший источник, чем сам сайт.</li>
+          <li data-vi>Thêm tiếng Nga vào website, bên cạnh các ngôn ngữ đang có.</li>
+          <li data-ru>Добавляю на сайт русский язык, рядом с теми, что уже есть.</li>
+        </ul>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> website bắt đầu vào chỉ mục Google, khách nhắn được qua Zalo và Telegram ngay từ trang căn hộ.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> сайт начинает попадать в индекс Google, клиенты пишут в Zalo и Telegram прямо со страницы объекта.</div>
+      </div>
     </div>
 
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>2.2 · Cấu trúc website: từ 10 trang lên khoảng 100</h3>
-        <h3 data-ru>2.2 · Структура сайта: с 10 страниц до сотни</h3>
-        <span class="badge now" data-vi>tuần 2 tới 4</span><span class="badge now" data-ru>недели 2 - 4</span>
+    <div class="stage">
+      <div class="stage-n content">2</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Bản đồ nhu cầu và đối thủ</h3>
+          <h3 data-ru>Карта спроса и конкурентов</h3>
+          <span class="badge" data-vi>tuần 2 tới 3</span><span class="badge" data-ru>недели 2 - 3</span>
+        </div>
+        <p class="note" data-vi>Đây là bản đồ cho mọi việc còn lại. Sau bước này không còn ai đoán nên viết gì và làm trang nào trước.</p>
+        <p class="note" data-ru>Это карта для всей остальной работы. После неё никто не гадает, что писать и какую страницу делать первой.</p>
+        <ul>
+          <li data-vi><b>Năm ngôn ngữ cùng lúc:</b> Việt, Anh, Nga, Hàn, Trung. Mỗi nhóm khách gõ một kiểu: người Việt tìm «thuê căn hộ Sơn Trà», người Nga tìm «аренда квартиры Дананг», người Hàn tìm «다낭 월세».</li>
+          <li data-ru><b>Пять языков сразу:</b> вьетнамский, английский, русский, корейский, китайский. Каждая аудитория ищет по-своему: вьетнамец «thuê căn hộ Sơn Trà», русский «аренда квартиры Дананг», кореец «다낭 월세».</li>
+          <li data-vi><b>Nguồn:</b> gợi ý của Google và YouTube, công cụ từ khoá, truy vấn mà đối thủ đang đứng, và một nguồn không ai có: <b>327 yêu cầu thật</b> hệ thống đã thu được, viết bằng chính lời của khách.</li>
+          <li data-ru><b>Источники:</b> подсказки Google и YouTube, планировщики ключевых слов, запросы конкурентов и источник, которого нет ни у кого: <b>327 живых обращений</b>, собранных системой словами самих клиентов.</li>
+          <li data-vi><b>Gom nhóm theo kết quả tìm kiếm thật,</b> không theo cảm tính: hai truy vấn cùng một nhóm nếu Google trả về cùng những trang. Cách này tách được những cụm từ đọc bằng mắt tưởng giống nhau nhưng Google hiểu hoàn toàn khác.</li>
+          <li data-ru><b>Кластеризация по живой выдаче,</b> а не на глаз: два запроса в одной группе, если Google показывает по ним одни и те же страницы. Так разводятся фразы, которые на вид одинаковы, а Google понимает их по-разному.</li>
+          <li data-vi><b>Phân tích đối thủ:</b> ai đang đứng đầu theo từng nhóm, họ có trang gì mà mình chưa có, họ trả lời câu hỏi nào mà mình bỏ qua, giá họ đưa ra là bao nhiêu.</li>
+          <li data-ru><b>Анализ конкурентов:</b> кто в топе по каждой группе, какие у них есть страницы, которых нет у нас, на какие вопросы они отвечают, а мы нет, и какие цены они показывают.</li>
+          <li data-vi><b>Mọi thứ nằm trong một cơ sở dữ liệu,</b> không phải file Excel: truy vấn, tần suất, ngôn ngữ, nhóm, ai đang đứng đầu, trang nào của mình phải trả lời. Cập nhật hàng tuần.</li>
+          <li data-ru><b>Всё лежит в базе,</b> а не в файле Excel: запрос, частота, язык, кластер, кто в топе, какая наша страница отвечает. Обновляется еженедельно.</li>
+        </ul>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> bản đồ nhu cầu. Ước tính vài nghìn truy vấn và khoảng 150 tới 300 nhóm, kèm chỗ nào đối thủ đang lấy khách của mình.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> карту спроса. Ориентир: несколько тысяч запросов и 150 - 300 групп, плюс места, где конкуренты забирают ваших клиентов.</div>
       </div>
-      <p class="note" data-vi>Mỗi nhóm truy vấn cần đúng một trang trả lời nó. Hiện website chỉ có trang chủ và một danh sách chung, nên hầu hết nhu cầu không có chỗ nào đón.</p>
-      <p class="note" data-ru>Каждому кластеру нужна ровно одна страница, которая на него отвечает. Сейчас на сайте есть только главная и общий список, поэтому почти весь спрос попадать некуда.</p>
-      <ul>
-        <li data-vi><b>Trang khu vực</b> (8): Sơn Trà, Mỹ An, Mỹ Khê, An Thượng, Hải Châu, Ngũ Hành Sơn, Hoà Hải, Nại Hiên Đông. Mỗi trang có giá thuê thực tế, khu này hợp với ai, xung quanh có gì, và danh sách căn đang trống.</li>
-        <li data-ru><b>Страницы районов</b> (8): Сон Тра, Ми Ан, Ми Кхе, Ан Тхыонг, Хай Чау, Нгу Хань Шон, Хоа Хай, Най Хиен Донг. На каждой реальные цены, кому подходит район, что рядом и список свободных объектов.</li>
-        <li data-vi><b>Trang toà nhà</b> (8 tới 10): Lux Panoma 1 và 2, Vista, Lux Ponte, Lux Time Square, Hyori, Monarchy, Fillmore, Futa Resident. Người ta gõ thẳng tên toà nhà vào Google, và hôm nay không có trang nào của công ty trả lời.</li>
-        <li data-ru><b>Страницы комплексов</b> (8 - 10): Lux Panoma 1 и 2, Vista, Lux Ponte, Lux Time Square, Hyori, Monarchy, Fillmore, Futa Resident. Название здания вбивают в Google напрямую, и сегодня на это нет ни одной вашей страницы.</li>
-        <li data-vi><b>Trang theo loại và ngân sách:</b> studio, 1, 2, 3 phòng ngủ, biệt thự, nhà nguyên căn, cộng những cặp «khu vực + loại» mà bản đồ nhu cầu cho thấy có người tìm.</li>
-        <li data-ru><b>Страницы по типу и бюджету:</b> студии, 1, 2, 3 спальни, виллы, дома, плюс те сочетания «район и тип», по которым карта спроса показывает живой интерес.</li>
-        <li data-vi><b>Trang từng căn</b> (20 và tăng dần): sinh ra tự động từ bảng danh sách của công ty, kèm ảnh, giá, khu vực và đánh dấu dữ liệu để Google hiểu đây là nhà cho thuê. Thêm căn vào bảng là có trang mới, không cần gọi ai.</li>
-        <li data-ru><b>Страницы объектов</b> (20 и далее): создаются автоматически из вашей таблицы, с фото, ценой, районом и разметкой, по которой Google понимает, что это аренда жилья. Добавили объект в таблицу, страница появилась сама.</li>
-        <li data-vi><b>Liên kết nội bộ có quy tắc:</b> trang khu vực dẫn tới toà nhà, toà nhà dẫn tới căn, căn dẫn ngược lại khu vực và tới bài viết liên quan. Đây là thứ giúp trang mới vào chỉ mục nhanh mà không phải chờ.</li>
-        <li data-ru><b>Перелинковка по правилам:</b> район ведёт на комплексы, комплекс на объекты, объект обратно на район и на связанные статьи. Именно это ускоряет попадание новых страниц в индекс.</li>
-      </ul>
-      <div class="res" data-vi><b>Kết quả:</b> khoảng 100 trang, mỗi trang trả lời một nhóm truy vấn cụ thể, và cấu trúc tự lớn lên khi danh sách căn dài ra.</div>
-      <div class="res" data-ru><b>Результат:</b> около сотни страниц, каждая отвечает своему кластеру, и структура растёт сама по мере пополнения базы объектов.</div>
     </div>
 
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>2.3 · Nhà máy bài viết: nội dung tự động, có kiểm duyệt</h3>
-        <h3 data-ru>2.3 · Фабрика статей: контент на автомате, но с проверкой</h3>
-        <span class="badge now" data-vi>từ tuần 3, chạy liên tục</span><span class="badge now" data-ru>с недели 3, дальше постоянно</span>
+    <div class="stage">
+      <div class="stage-n site">3</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Khung website: từ 10 trang lên khoảng 100</h3>
+          <h3 data-ru>Каркас сайта: с 10 страниц до сотни</h3>
+          <span class="badge" data-vi>tuần 3 tới 5</span><span class="badge" data-ru>недели 3 - 5</span>
+        </div>
+        <p class="note" data-vi>Mỗi nhóm truy vấn cần đúng một trang trả lời nó. Hiện website chỉ có trang chủ và một danh sách chung, nên hầu hết nhu cầu không có chỗ nào đón.</p>
+        <p class="note" data-ru>Каждой группе запросов нужна ровно одна страница, которая на неё отвечает. Сейчас на сайте только главная и общий список, поэтому почти весь спрос попадать некуда.</p>
+        <ul>
+          <li data-vi><b>Danh sách căn nối thẳng vào website:</b> thêm căn vào bảng là trang mới xuất hiện, kèm ảnh, giá, khu vực và đánh dấu dữ liệu. Không cần gọi ai, không cần chờ.</li>
+          <li data-ru><b>Каталог подключается к сайту напрямую:</b> добавили объект в таблицу, страница появилась сама, с фото, ценой, районом и разметкой. Никого просить не нужно.</li>
+          <li data-vi><b>Trang khu vực</b> (8): Sơn Trà, Mỹ An, Mỹ Khê, An Thượng, Hải Châu, Ngũ Hành Sơn, Hoà Hải, Nại Hiên Đông. Mỗi trang có giá thuê thực tế, khu này hợp với ai, xung quanh có gì và danh sách căn đang trống.</li>
+          <li data-ru><b>Страницы районов</b> (8): Сон Тра, Ми Ан, Ми Кхе, Ан Тхыонг, Хай Чау, Нгу Хань Шон, Хоа Хай, Най Хиен Донг. На каждой реальные цены, кому подходит район, что рядом и список свободных объектов.</li>
+          <li data-vi><b>Trang toà nhà</b> (8 tới 10): Lux Panoma 1 và 2, Vista, Lux Ponte, Lux Time Square, Hyori, Monarchy, Fillmore, Futa Resident. Người ta gõ thẳng tên toà nhà vào Google, và hôm nay không có trang nào trả lời.</li>
+          <li data-ru><b>Страницы комплексов</b> (8 - 10): Lux Panoma 1 и 2, Vista, Lux Ponte, Lux Time Square, Hyori, Monarchy, Fillmore, Futa Resident. Название здания вбивают в Google напрямую, и сегодня на это нет ни одной страницы.</li>
+          <li data-vi><b>Trang theo loại và ngân sách:</b> studio, 1, 2, 3 phòng ngủ, biệt thự, nhà nguyên căn, cộng những cặp «khu vực + loại» mà bản đồ nhu cầu cho thấy có người tìm.</li>
+          <li data-ru><b>Страницы по типу и бюджету:</b> студии, 1, 2, 3 спальни, виллы, дома, плюс сочетания «район и тип», по которым карта спроса показывает живой интерес.</li>
+          <li data-vi><b>Liên kết nội bộ có quy tắc:</b> khu vực dẫn tới toà nhà, toà nhà dẫn tới căn, căn dẫn ngược lại khu vực và tới bài viết liên quan. Đây là thứ giúp trang mới vào chỉ mục nhanh.</li>
+          <li data-ru><b>Перелинковка по правилам:</b> район ведёт на комплексы, комплекс на объекты, объект обратно на район и на связанные статьи. Именно это ускоряет попадание новых страниц в индекс.</li>
+        </ul>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> khoảng 100 trang thay cho 10, và cấu trúc tự lớn lên khi danh sách căn dài ra.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> около сотни страниц вместо десяти, и структура растёт сама по мере пополнения базы объектов.</div>
       </div>
-      <p class="note" data-vi>Dây chuyền này đã chạy ở một dự án khác của tôi: bài do máy soạn, tự đăng lên website, vào chỉ mục và mang trafic đều đặn. Ở đây làm y hệt, chỉ đổi chủ đề sang thuê nhà tại Đà Nẵng và thêm ngôn ngữ.</p>
-      <p class="note" data-ru>Этот конвейер уже работает в другом моём проекте: статьи пишет машина, они сами уходят на сайт, индексируются и приносят трафик. Здесь то же самое, меняется только тема на аренду в Дананге и добавляются языки.</p>
-      <div class="flow">
-        <div class="flow-step"><b data-vi>1 · Chủ đề</b><b data-ru>1 · Тема</b><span data-vi>lấy từ bản đồ nhu cầu, xếp theo tần suất thật, không ai ngồi đoán</span><span data-ru>из карты спроса, по реальной частоте, никто не угадывает</span></div>
-        <div class="flow-step"><b data-vi>2 · Đề cương</b><b data-ru>2 · План</b><span data-vi>máy tự viết đề cương: các phần, câu hỏi thường gặp, tiêu đề, địa chỉ trang</span><span data-ru>машина сама пишет структуру: разделы, частые вопросы, заголовок, адрес</span></div>
-        <div class="flow-step"><b data-vi>3 · Bản thảo</b><b data-ru>3 · Черновик</b><span data-vi>viết bằng giọng của công ty, số liệu lấy từ bảng căn hộ</span><span data-ru>пишется голосом компании, цифры берутся из базы объектов</span></div>
-        <div class="flow-step"><b data-vi>4 · Soát</b><b data-ru>4 · Аудит</b><span data-vi>một lượt kiểm riêng: sai sự thật, giá bịa, câu sáo rỗng, lặp từ</span><span data-ru>отдельная проверка: неверные факты, выдуманные цены, штампы, повторы</span></div>
-        <div class="flow-step"><b data-vi>5 · Đăng</b><b data-ru>5 · Публикация</b><span data-vi>tự lên website kèm ảnh, đánh dấu dữ liệu, sitemap và liên kết nội bộ</span><span data-ru>сама уходит на сайт с картинками, разметкой, картой сайта и ссылками</span></div>
-      </div>
-      <ul>
-        <li data-vi><b>Nhịp:</b> 5 tới 10 bài mỗi tuần, mỗi bài có bản tiếng Việt, Anh và Nga.</li>
-        <li data-ru><b>Ритм:</b> 5 - 10 статей в неделю, каждая на вьетнамском, английском и русском.</li>
-        <li data-vi><b>Chống bịa đặt:</b> mọi con số về giá, diện tích, khu vực lấy từ bảng căn hộ của công ty, không phải từ trí tưởng tượng của máy. Đây chính là chỗ mà phần lớn nội dung tự động thất bại, và cũng là chỗ tôi đã đi qua trong những dự án đầu tiên của mình.</li>
-        <li data-ru><b>Защита от вымысла:</b> все цифры по ценам, площадям и районам берутся из вашей таблицы, а не из фантазии модели. Именно на этом сыпется большинство автоматического контента, и именно это я уже проходил ранее в своих первых проектах.</li>
-        <li data-vi><b>Kiểm soát của công ty:</b> mỗi bài chờ duyệt trong trang quản trị, bấm một nút là đăng. Khi đã tin dây chuyền thì bật chế độ tự đăng. Bài nào cũng mở ra sửa được sau khi lên.</li>
-        <li data-ru><b>Ваш контроль:</b> каждая статья ждёт утверждения в кабинете, публикуется одной кнопкой. Когда убедитесь в качестве, включается автопубликация. Любую статью можно открыть и поправить после выхода.</li>
-        <li data-vi><b>Bài viết không sống một mình:</b> mỗi bài dẫn tới trang khu vực và tới những căn đang trống hợp với nội dung. Người đọc bài về Sơn Trà nhìn thấy ngay căn ở Sơn Trà.</li>
-        <li data-ru><b>Статья не живёт отдельно:</b> каждая ведёт на страницу района и на подходящие свободные объекты. Кто читает про Сон Тра, сразу видит квартиры в Сон Тра.</li>
-      </ul>
-      <div class="res" data-vi><b>Kết quả:</b> website lớn lên mỗi tuần mà không tốn giờ làm của ai, và lớn đúng về phía những gì khách đang tìm.</div>
-      <div class="res" data-ru><b>Результат:</b> сайт растёт каждую неделю без рабочих часов и растёт ровно в сторону того, что люди ищут.</div>
     </div>
 
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>2.4 · Phần kỹ thuật: không có nó thì mọi thứ ở trên đổ sông đổ biển</h3>
-        <h3 data-ru>2.4 · Техническая часть, без которой всё выше впустую</h3>
-        <span class="badge now" data-vi>tuần 1</span><span class="badge now" data-ru>неделя 1</span>
+    <div class="stage">
+      <div class="stage-n content">4</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Nhà máy bài viết</h3>
+          <h3 data-ru>Фабрика статей</h3>
+          <span class="badge" data-vi>từ tuần 4, chạy liên tục</span><span class="badge" data-ru>с недели 4, дальше постоянно</span>
+        </div>
+        <p class="note" data-vi>Dây chuyền này đã chạy ở một dự án khác của tôi: bài do máy soạn, tự đăng lên website, vào chỉ mục và mang trafic đều đặn. Ở đây làm y hệt, chỉ đổi chủ đề sang thuê nhà tại Đà Nẵng và thêm ngôn ngữ.</p>
+        <p class="note" data-ru>Этот конвейер уже работает в другом моём проекте: статьи пишет машина, они сами уходят на сайт, индексируются и приносят трафик. Здесь то же самое, меняется только тема на аренду в Дананге и добавляются языки.</p>
+        <div class="flow">
+          <div class="flow-step"><b data-vi>1 · Chủ đề</b><b data-ru>1 · Тема</b><span data-vi>lấy từ bản đồ nhu cầu, xếp theo tần suất thật</span><span data-ru>из карты спроса, по реальной частоте</span></div>
+          <div class="flow-step"><b data-vi>2 · Đề cương</b><b data-ru>2 · План</b><span data-vi>máy tự viết các phần, câu hỏi thường gặp, tiêu đề</span><span data-ru>машина сама пишет разделы, частые вопросы, заголовок</span></div>
+          <div class="flow-step"><b data-vi>3 · Bản thảo</b><b data-ru>3 · Черновик</b><span data-vi>viết bằng giọng của công ty, số liệu từ bảng căn hộ</span><span data-ru>голосом компании, цифры из базы объектов</span></div>
+          <div class="flow-step"><b data-vi>4 · Soát</b><b data-ru>4 · Аудит</b><span data-vi>lượt kiểm riêng: sai sự thật, giá bịa, câu sáo rỗng</span><span data-ru>отдельная проверка: неверные факты, выдуманные цены, штампы</span></div>
+          <div class="flow-step"><b data-vi>5 · Đăng</b><b data-ru>5 · Публикация</b><span data-vi>tự lên website kèm ảnh, đánh dấu, sitemap</span><span data-ru>сама уходит на сайт с картинками, разметкой, картой сайта</span></div>
+        </div>
+        <ul>
+          <li data-vi><b>Nhịp:</b> 5 tới 10 bài mỗi tuần, mỗi bài có bản tiếng Việt, Anh và Nga.</li>
+          <li data-ru><b>Ритм:</b> 5 - 10 статей в неделю, каждая на вьетнамском, английском и русском.</li>
+          <li data-vi><b>Chống bịa đặt:</b> mọi con số về giá, diện tích, khu vực lấy từ bảng căn hộ của công ty, không phải từ trí tưởng tượng của máy. Đây chính là chỗ mà phần lớn nội dung tự động thất bại, và cũng là chỗ tôi đã đi qua trong những dự án đầu tiên của mình.</li>
+          <li data-ru><b>Защита от вымысла:</b> все цифры по ценам, площадям и районам берутся из вашей таблицы, а не из фантазии модели. Именно на этом сыпется большинство автоматического контента, и именно это я уже проходил ранее в своих первых проектах.</li>
+          <li data-vi><b>Kiểm soát:</b> mỗi bài chờ duyệt trong trang quản trị, bấm một nút là đăng. Khi anh chị đã tin dây chuyền thì bật chế độ tự đăng. Bài nào cũng mở ra sửa được sau khi lên.</li>
+          <li data-ru><b>Контроль:</b> каждая статья ждёт утверждения в кабинете, публикуется одной кнопкой. Когда убедитесь в качестве, включается автопубликация. Любую статью можно поправить после выхода.</li>
+          <li data-vi><b>Bài viết không sống một mình:</b> mỗi bài dẫn tới trang khu vực và tới những căn đang trống hợp với nội dung. Người đọc bài về Sơn Trà nhìn thấy ngay căn ở Sơn Trà.</li>
+          <li data-ru><b>Статья не живёт отдельно:</b> каждая ведёт на страницу района и на подходящие свободные объекты. Кто читает про Сон Тра, сразу видит квартиры в Сон Тра.</li>
+        </ul>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> website lớn lên mỗi tuần mà không tốn giờ làm của ai, và lớn đúng về phía những gì khách đang tìm.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> сайт растёт каждую неделю без рабочих часов и растёт ровно в сторону того, что люди ищут.</div>
       </div>
-      <ul>
-        <li data-vi>robots.txt và sitemap tự cập nhật mỗi khi có căn mới hoặc bài mới, kết nối Google Search Console và Bing, gửi trang mới đi lập chỉ mục ngay khi xuất bản.</li>
-        <li data-ru>robots.txt и карта сайта, обновляемые при каждом новом объекте или статье, подключение Google Search Console и Bing, отправка новых страниц на индексацию сразу после публикации.</li>
-        <li data-vi>Tiêu đề và mô tả riêng cho từng trang và từng ngôn ngữ, sinh theo mẫu từ dữ liệu căn hộ, thay cho một mô tả dùng chung như hiện nay.</li>
-        <li data-ru>Свои заголовки и описания для каждой страницы и каждого языка, собираемые по шаблону из данных объекта, вместо одного общего, как сейчас.</li>
-        <li data-vi>Địa chỉ trang đọc được thay cho dạng «c-n-h-sang-tr-ng-ho-01», và địa chỉ chia sẻ trỏ đúng tên miền công ty chứ không phải tên miền kỹ thuật.</li>
-        <li data-ru>Человеческие адреса страниц вместо «c-n-h-sang-tr-ng-ho-01» и правильный адрес для соцсетей вместо технического домена.</li>
-        <li data-vi>Đánh dấu dữ liệu cho căn hộ, cho công ty và cho câu hỏi thường gặp, để Google hiển thị giá, địa chỉ và đánh giá ngay trong kết quả tìm kiếm.</li>
-        <li data-ru>Разметка объектов, компании и вопросов, чтобы Google показывал цену, адрес и рейтинг прямо в выдаче.</li>
-        <li data-vi>Liên kết ngôn ngữ đúng chuẩn cho năm phiên bản, để Google không coi chúng là bản sao và đưa đúng bản ngôn ngữ cho đúng người.</li>
-        <li data-ru>Правильные языковые связи для пяти версий, чтобы Google не считал их копиями и показывал нужный язык нужному человеку.</li>
-        <li data-vi>Ảnh nén nhẹ và tải dần, tốc độ đo trên mạng di động Việt Nam chứ không phải trên wifi văn phòng.</li>
-        <li data-ru>Сжатые и подгружаемые по мере прокрутки фото, скорость измеряется на вьетнамском мобильном интернете, а не на офисном wifi.</li>
-        <li data-vi>Hồ sơ Google Business Profile với ảnh, giờ làm việc, khu vực phục vụ và quy trình thu thập đánh giá. Với môi giới địa phương, đây thường là nguồn khách lớn hơn cả website.</li>
-        <li data-ru>Карточка Google Business Profile с фото, часами, зоной работы и процессом сбора отзывов. Для местного агентства это часто больший источник, чем сам сайт.</li>
-      </ul>
     </div>
 
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>2.5 · Theo dõi thứ hạng và đối thủ</h3>
-        <h3 data-ru>2.5 · Слежение за позициями и конкурентами</h3>
-        <span class="badge" data-vi>chạy nền, hàng tuần</span><span class="badge" data-ru>фоном, еженедельно</span>
+    <div class="stage">
+      <div class="stage-n social">5</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Mạng xã hội và đăng bài tự động</h3>
+          <h3 data-ru>Соцсети и автопостинг</h3>
+          <span class="badge" data-vi>tuần 5 tới 7</span><span class="badge" data-ru>недели 5 - 7</span>
+        </div>
+        <p class="note" data-vi>SEO cần thời gian để lớn. Mạng xã hội cho kết quả ngay và nuôi dự án trong lúc chờ.</p>
+        <p class="note" data-ru>SEO набирает силу не сразу. Соцсети дают результат сразу и кормят, пока поиск раскачивается.</p>
+        <ul>
+          <li data-vi>Hiện Facebook và Instagram trỏ về trang cá nhân. Cần trang thương hiệu riêng: Facebook, Instagram, TikTok, Zalo OA và một kênh Telegram cho khách nói tiếng Nga.</li>
+          <li data-ru>Сейчас Facebook и Instagram ведут на личные профили. Нужны отдельные страницы бренда: Facebook, Instagram, TikTok, Zalo OA и канал Telegram для русскоязычных.</li>
+          <li data-vi>Mỗi căn lên bài theo lịch, mỗi kênh một cách viết riêng chứ không phải một bài dán khắp nơi. Căn đã cho thuê tự rút khỏi lịch đăng.</li>
+          <li data-ru>Каждый объект выходит по расписанию, для каждой площадки свой текст, а не одна копия везде. Сданный объект сам уходит из очереди.</li>
+          <li data-vi>Ảnh lấy từ Google Drive, tự cắt đúng khổ từng mạng, nén nhẹ và gắn dấu của công ty.</li>
+          <li data-ru>Фото берутся из Google Drive, обрезаются под формат каждой площадки, сжимаются и получают ваш знак.</li>
+          <li data-vi>Bài viết trên website cũng tự lên mạng xã hội, nên một bài làm việc ở hai chỗ.</li>
+          <li data-ru>Статьи с сайта тоже уходят в соцсети, поэтому один текст работает в двух местах.</li>
+        </ul>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> căn hộ lên bài mỗi ngày trên mọi kênh, không ai phải ngồi đăng tay.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> объекты выходят ежедневно на всех площадках, руками постить не нужно.</div>
       </div>
-      <ul>
-        <li data-vi>Đo thứ hạng hàng tuần cho toàn bộ nhóm truy vấn quan trọng, tách theo từng ngôn ngữ, lưu lại thành lịch sử chứ không phải ảnh chụp một lần.</li>
-        <li data-ru>Еженедельный съём позиций по всем значимым кластерам, отдельно по языкам, с сохранением истории, а не разовым снимком.</li>
-        <li data-vi>Chụp lại kết quả tìm kiếm: ai đứng trên chúng ta, họ có trang gì mà mình chưa có, họ trả lời câu hỏi nào mà mình bỏ qua.</li>
-        <li data-ru>Снимок выдачи: кто стоит выше, какие у них есть страницы, которых нет у нас, на какие вопросы они отвечают, а мы нет.</li>
-        <li data-vi>So bản đồ nhu cầu với thực tế: chỗ nào đã có trang và đứng tốt, chỗ nào có trang mà thứ hạng thấp, chỗ nào hoàn toàn bỏ trống. Chính chỗ trống là danh sách việc của tuần sau.</li>
-        <li data-ru>Сверка карты спроса с фактом: где страница есть и позиции хорошие, где страница есть, а позиции низкие, где пусто совсем. Пустые места и есть список работ на следующую неделю.</li>
-      </ul>
+    </div>
+
+    <div class="stage">
+      <div class="stage-n cab">6</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Trang quản trị SEO riêng</h3>
+          <h3 data-ru>Собственный SEO-кабинет</h3>
+          <span class="badge" data-vi>từ tuần 5, lớn dần</span><span class="badge" data-ru>с недели 5, растёт дальше</span>
+        </div>
+        <p class="note" data-vi>Đây là thế mạnh riêng của tôi, sản phẩm do chính tôi phát triển. Mọi con số về công việc kinh doanh nằm trong một trang riêng có mật khẩu, tự cập nhật vài giờ một lần. Anh chị không phải tin lời ai và không phải chờ báo cáo cuối tháng.</p>
+        <p class="note" data-ru>Это моя главная фишка, моя уникальная разработка. Все цифры по нашему бизнесу в отдельном кабинете под паролем, обновляются каждые несколько часов. Вам не нужно верить на слово и ждать отчёта в конце месяца.</p>
+        <div class="screens">
+          <div class="screen">
+            <h4><span class="dot" style="background:#2563eb"></span><span data-vi>Tổng quan</span><span data-ru>Обзор</span></h4>
+            <p data-vi>Lượt vào từ tìm kiếm theo ngày, số trang trong chỉ mục, số yêu cầu khách để lại, kèm mức tăng giảm so với tuần và tháng trước.</p>
+            <p data-ru>Заходы из поиска по дням, страниц в индексе, оставленных заявок, с изменением к прошлой неделе и месяцу.</p>
+          </div>
+          <div class="screen">
+            <h4><span class="dot" style="background:#7c3aed"></span><span data-vi>Nhu cầu và độ phủ</span><span data-ru>Спрос и покрытие</span></h4>
+            <p data-vi>Toàn bộ nhu cầu chia ba rổ: đã có trang và đứng tốt, có trang nhưng thứ hạng thấp, chưa có gì. Kèm tần suất từng nhóm.</p>
+            <p data-ru>Весь спрос в трёх корзинах: есть страница и хорошие позиции, страница есть, но позиции низкие, нет ничего. С частотой по каждой группе.</p>
+          </div>
+          <div class="screen">
+            <h4><span class="dot" style="background:#0891b2"></span><span data-vi>Thứ hạng</span><span data-ru>Позиции</span></h4>
+            <p data-vi>Lịch sử thứ hạng theo tuần cho từng truy vấn và ngôn ngữ, đối thủ nào vừa vượt lên, trang nào vừa tụt và tụt từ khi nào.</p>
+            <p data-ru>История позиций по неделям для каждого запроса и языка, кто обошёл, что просело и с какого дня.</p>
+          </div>
+          <div class="screen">
+            <h4><span class="dot" style="background:#ea580c"></span><span data-vi>Việc cần làm</span><span data-ru>Находки и задачи</span></h4>
+            <p data-vi>Hệ thống tự tìm ra vấn đề và viết thành việc: truy vấn hạng 11 tới 20 chỉ cần đẩy nhẹ, trang có lượt hiển thị mà không ai bấm, nhóm chưa có trang.</p>
+            <p data-ru>Система сама находит проблемы и превращает их в задачи: запрос на 11 - 20 месте, страница с показами без кликов, группа без страницы.</p>
+          </div>
+          <div class="screen">
+            <h4><span class="dot" style="background:#166534"></span><span data-vi>Nội dung</span><span data-ru>Контент</span></h4>
+            <p data-vi>Hàng đợi chủ đề theo tần suất, bài nào đã đăng, bài nào chờ duyệt, bài nào mang lại bao nhiêu lượt vào và yêu cầu.</p>
+            <p data-ru>Очередь тем по частоте, что опубликовано, что ждёт утверждения, какая статья сколько заходов и заявок принесла.</p>
+          </div>
+          <div class="screen">
+            <h4><span class="dot" style="background:#b45309"></span><span data-vi>Khách và tiền</span><span data-ru>Клиенты и деньги</span></h4>
+            <p data-vi>Yêu cầu đến từ kênh nào, dẫn tới bao nhiêu lượt xem nhà, bao nhiêu hợp đồng, bao nhiêu hoa hồng. Trả lời bằng số, không bằng lời hứa.</p>
+            <p data-ru>Из какого канала пришла заявка, сколько показов, договоров и комиссии. Ответ цифрой, а не обещанием.</p>
+          </div>
+        </div>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> chỗ nào nên đẩy mạnh và chỗ nào không hiệu quả, không đáng bỏ thời gian. Cả hai bên nhìn cùng một màn hình.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> где стоит надавить, а где не работает и не стоит тратить время. Обе стороны смотрят в один экран.</div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-n site">7</div>
+      <div>
+        <div class="stage-head">
+          <h3 data-vi>Thiết kế lại và tính năng bán hàng</h3>
+          <h3 data-ru>Редизайн и функции продаж</h3>
+          <span class="badge" data-vi>tuần 8 tới 12</span><span class="badge" data-ru>недели 8 - 12</span>
+        </div>
+        <p class="note" data-vi>Làm sau cùng có chủ ý: trước hết phải có khách vào website, sau đó mới thấy rõ họ bỏ đi ở chỗ nào. Thiết kế lại mà không có số liệu chỉ là đổi màu.</p>
+        <p class="note" data-ru>Это делается последним намеренно: сначала на сайт должны прийти люди, и только тогда видно, где они уходят. Редизайн без данных это смена цвета.</p>
+        <ul>
+          <li data-vi><b>Hình ảnh mới</b> theo hướng anh chị chọn: tôi đã chuẩn bị sáu phương án hoàn chỉnh để xem và chọn, không phải bản vẽ mà là bản chạy được.</li>
+          <li data-ru><b>Новый визуал</b> по выбранному вами направлению: у меня уже готово шесть полностью проработанных вариантов, не картинки, а рабочие демо.</li>
+          <li data-vi><b>Tính năng ảnh hưởng trực tiếp tới việc chốt khách:</b> lưu căn yêu thích rồi gửi cả nhóm bằng một yêu cầu, lọc theo khu vực và lối sống, bản đồ Đà Nẵng có điểm, bảng hỏi ba bước để nhận gợi ý, chọn ngày dọn vào, gọi video cho khách chưa tới Việt Nam.</li>
+          <li data-ru><b>Функции, которые напрямую влияют на закрытие клиента:</b> избранное и отправка подборки одним запросом, фильтр по району и образу жизни, карта Дананга с точками, анкета в три шага, выбор даты заезда, видеозвонок для тех, кто ещё не приехал.</li>
+          <li data-vi><b>Tích hợp AI ngay trong website:</b> khách mô tả bằng lời mình cần gì và nhận danh sách căn phù hợp, trả lời tự động ngoài giờ bằng đúng ngôn ngữ khách viết, tự dịch mô tả căn sang năm ngôn ngữ.</li>
+          <li data-ru><b>Интеграции ИИ прямо на сайте:</b> клиент описывает словами, что ему нужно, и получает подборку объектов, автоответ вне рабочих часов на языке обращения, автоперевод описаний объектов на пять языков.</li>
+          <li data-vi><b>Sửa những chỗ khách bỏ đi:</b> xem thật sự người ta rời trang ở bước nào và sửa đúng chỗ đó, dựa trên số liệu trong trang quản trị chứ không phải cảm giác.</li>
+          <li data-ru><b>Работа над местами, где уходят:</b> смотрим, на каком шаге люди реально закрывают страницу, и правим именно это, по цифрам из кабинета, а не по ощущениям.</li>
+          <li data-vi><b>Tốc độ và điện thoại:</b> ảnh nén nhẹ và tải dần, tốc độ đo trên mạng di động Việt Nam chứ không phải wifi văn phòng.</li>
+          <li data-ru><b>Скорость и телефон:</b> сжатые и подгружаемые фото, скорость измеряется на вьетнамском мобильном интернете, а не на офисном wifi.</li>
+        </ul>
+        <div class="res" data-vi><b>Anh chị nhìn thấy:</b> cùng lượng truy cập nhưng nhiều yêu cầu hơn, và thấy rõ kênh nào ra hợp đồng.</div>
+        <div class="res" data-ru><b>Что вы увидите:</b> больше заявок с того же трафика и понятно, какой канал даёт договоры.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p data-vi><b>Về thời gian, nói thẳng.</b> SEO không cho kết quả trong tuần đầu: trang cần vào chỉ mục, nội dung cần tích luỹ, Google cần thời gian để tin. Những lượt truy cập đầu tiên từ tìm kiếm thường xuất hiện sau ba đến sáu tuần, nguồn khách ổn định sau hai đến ba tháng. Vì vậy các kênh nhanh làm trước: nhắn tin, mạng xã hội, hồ sơ Google Maps và hệ thống tìm khách tôi đang chạy.</p>
+      <p data-ru><b>Про сроки честно.</b> SEO не даёт результата на первой неделе: страницам нужно попасть в индекс, контенту накопиться, Google нужно время, чтобы начать доверять. Первые заходы из поиска обычно появляются через три - шесть недель, ровный поток через два - три месяца. Поэтому быстрые каналы делаются первыми: мессенджеры, соцсети, карточка в Google Картах и система поиска клиентов, которую я уже веду.</p>
     </div>
   </section>
 
-  <section id="cabinet" class="rev">
-    <span class="sec-n" data-vi>Phần 3</span><span class="sec-n" data-ru>Часть 3</span>
-    <h2 data-vi>Trang quản trị SEO riêng</h2>
-    <h2 data-ru>Собственный SEO-кабинет</h2>
-    <p class="sub" data-vi>Đây là thế mạnh riêng của tôi, sản phẩm do chính tôi phát triển. Mọi con số về công việc kinh doanh nằm trong một trang riêng có mật khẩu, tự cập nhật vài giờ một lần.</p>
-    <p class="sub" data-ru>Это моя главная фишка, моя уникальная разработка. Все цифры по нашему бизнесу в отдельном кабинете под паролем, обновляются каждые несколько часов.</p>
-    <div class="screens">
-      <div class="screen">
-        <h4><span class="dot" style="background:#2563eb"></span><span data-vi>Tổng quan</span><span data-ru>Обзор</span></h4>
-        <p data-vi>Lượt vào từ tìm kiếm theo ngày, số trang trong chỉ mục, số yêu cầu khách để lại, tất cả kèm mức tăng giảm so với tuần trước và tháng trước.</p>
-        <p data-ru>Заходы из поиска по дням, страниц в индексе, оставленных заявок, всё с изменением к прошлой неделе и прошлому месяцу.</p>
+  <section id="start" class="rev">
+    <span class="sec-n" data-vi>Để bắt đầu</span><span class="sec-n" data-ru>Чтобы начать</span>
+    <h2 data-vi>Hai việc cần từ phía anh chị</h2>
+    <h2 data-ru>Две вещи, которые нужны от вас</h2>
+    <p class="sub" data-vi>Giai đoạn 1 không khởi động được nếu thiếu hai thứ này.</p>
+    <p class="sub" data-ru>Первый этап без этих двух вещей не стартует.</p>
+    <div class="need">
+      <div class="need-item">
+        <h4 data-vi>Quyền quản trị website và hosting</h4><h4 data-ru>Доступ администратора к сайту и хостингу</h4>
+        <p data-vi>Ai giữ mã nguồn và tài khoản lưu trữ. Không có quyền này thì không sửa được phần kỹ thuật và không đăng bài tự động được.</p>
+        <p data-ru>Кто держит код и хостинг. Без этого нельзя ни починить технику, ни настроить автопубликацию.</p>
       </div>
-      <div class="screen">
-        <h4><span class="dot" style="background:#7c3aed"></span><span data-vi>Nhu cầu và độ phủ</span><span data-ru>Спрос и покрытие</span></h4>
-        <p data-vi>Toàn bộ nhu cầu thuê nhà Đà Nẵng chia làm ba rổ: đã có trang và đứng tốt, có trang nhưng thứ hạng thấp, chưa có gì. Kèm tần suất từng nhóm, để thấy rổ trống nào đáng làm trước.</p>
-        <p data-ru>Весь спрос по аренде в Дананге в трёх корзинах: есть страница и хорошие позиции, страница есть, но позиции низкие, нет ничего. С частотой по каждому кластеру, чтобы видеть, какую дыру закрывать первой.</p>
+      <div class="need-item">
+        <h4 data-vi>Mở các thư mục ảnh</h4><h4 data-ru>Открыть папки с фото</h4>
+        <p data-vi>Một phần thư mục Google Drive đang đòi đăng nhập, ảnh trong đó không lên được website và không lên được mạng xã hội.</p>
+        <p data-ru>Часть папок Google Drive требует входа, эти фото не попадут ни на сайт, ни в посты.</p>
       </div>
-      <div class="screen">
-        <h4><span class="dot" style="background:#0891b2"></span><span data-vi>Thứ hạng</span><span data-ru>Позиции</span></h4>
-        <p data-vi>Lịch sử thứ hạng theo tuần cho từng truy vấn và từng ngôn ngữ, đối thủ nào vừa vượt lên, trang nào vừa tụt và tụt từ khi nào.</p>
-        <p data-ru>История позиций по неделям для каждого запроса и языка, кто только что обошёл, что просело и с какого дня.</p>
-      </div>
-      <div class="screen">
-        <h4><span class="dot" style="background:#ea580c"></span><span data-vi>Việc cần làm</span><span data-ru>Находки и задачи</span></h4>
-        <p data-vi>Hệ thống tự tìm ra vấn đề và viết thành việc cụ thể: truy vấn đang hạng 11 tới 20 chỉ cần đẩy nhẹ, trang có lượt hiển thị mà không ai bấm, nhóm nhu cầu chưa có trang, thứ hạng tụt sau một thay đổi.</p>
-        <p data-ru>Система сама находит проблемы и превращает их в конкретные задачи: запрос на 11 - 20 месте, который можно дожать, страница с показами без кликов, кластер без страницы, просадка после изменения.</p>
-      </div>
-      <div class="screen">
-        <h4><span class="dot" style="background:#166534"></span><span data-vi>Nội dung</span><span data-ru>Контент</span></h4>
-        <p data-vi>Hàng đợi chủ đề xếp theo tần suất, bài nào đã đăng, bài nào đang chờ duyệt, bài nào mang lại bao nhiêu lượt vào và bao nhiêu yêu cầu.</p>
-        <p data-ru>Очередь тем по частоте, что опубликовано, что ждёт утверждения, какая статья сколько заходов и сколько заявок принесла.</p>
-      </div>
-      <div class="screen">
-        <h4><span class="dot" style="background:#b45309"></span><span data-vi>Khách và tiền</span><span data-ru>Клиенты и деньги</span></h4>
-        <p data-vi>Yêu cầu đến từ kênh nào, dẫn tới bao nhiêu lượt xem nhà, bao nhiêu hợp đồng, bao nhiêu hoa hồng. Đây là chỗ trả lời câu hỏi «SEO có ra tiền không» bằng số, không bằng lời hứa.</p>
-        <p data-ru>Из какого канала пришла заявка, сколько показов, сколько договоров и сколько комиссии. Здесь ответ на вопрос «приносит ли SEO деньги» даётся цифрой, а не обещанием.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="social" class="rev">
-    <span class="sec-n" data-vi>Phần 4</span><span class="sec-n" data-ru>Часть 4</span>
-    <h2 data-vi>Mạng xã hội và kênh liên hệ</h2>
-    <h2 data-ru>Соцсети и каналы связи</h2>
-    <p class="sub" data-vi>SEO cần thời gian để lớn. Những việc dưới đây cho kết quả ngay trong vài tuần đầu và nuôi công ty trong lúc chờ.</p>
-    <p class="sub" data-ru>SEO набирает силу не сразу. То, что ниже, даёт результат в первые недели и кормит, пока поиск раскачивается.</p>
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>Đăng bài tự động từ danh sách căn</h3><h3 data-ru>Автопубликация из базы объектов</h3>
-      </div>
-      <ul>
-        <li data-vi>Hiện Facebook và Instagram của công ty trỏ về trang cá nhân. Cần trang thương hiệu riêng: Facebook, Instagram, TikTok, Zalo OA và một kênh Telegram cho khách nói tiếng Nga.</li>
-        <li data-ru>Сейчас Facebook и Instagram ведут на личные профили. Нужны отдельные страницы бренда: Facebook, Instagram, TikTok, Zalo OA и канал Telegram для русскоязычных.</li>
-        <li data-vi>Mỗi căn lên bài theo lịch, mỗi kênh một cách viết riêng chứ không phải một bài dán khắp nơi. Căn đã cho thuê tự rút khỏi lịch đăng.</li>
-        <li data-ru>Каждый объект выходит по расписанию, для каждой площадки свой текст, а не одна копия везде. Сданный объект сам уходит из очереди.</li>
-        <li data-vi>Ảnh lấy từ Google Drive của công ty, tự cắt đúng khổ từng mạng, nén nhẹ và gắn dấu của công ty.</li>
-        <li data-ru>Фото берутся из вашего Google Drive, обрезаются под формат каждой площадки, сжимаются и получают ваш знак.</li>
-        <li data-vi>Bài viết trên website cũng tự lên mạng xã hội, nên một bài làm việc ở hai chỗ.</li>
-        <li data-ru>Статьи с сайта тоже уходят в соцсети, поэтому один текст работает в двух местах.</li>
-      </ul>
-    </div>
-    <div class="block">
-      <div class="block-head">
-        <h3 data-vi>Mọi kênh liên hệ trên mọi trang</h3><h3 data-ru>Все каналы связи на каждой странице</h3>
-      </div>
-      <ul>
-        <li data-vi>Zalo, WhatsApp, Telegram, Messenger đặt cạnh mỗi căn và cố định ở đáy màn hình điện thoại. Hiện chỉ có mã QR WhatsApp và email, tức là khách phải tự nghĩ cách liên hệ.</li>
-        <li data-ru>Zalo, WhatsApp, Telegram, Messenger рядом с каждым объектом и закреплённой полосой внизу экрана телефона. Сейчас только QR-код WhatsApp и почта, то есть человек должен сам придумать, как связаться.</li>
-        <li data-vi>Yêu cầu từ website chạy thẳng vào bot trong vài giây, ngoài giờ làm việc có trả lời tự động bằng đúng ngôn ngữ khách viết. Không còn ai bị bỏ quên tới sáng hôm sau.</li>
-        <li data-ru>Заявка с сайта попадает в бот за секунды, вне рабочих часов работает автоответ на языке обращения. Никто не остаётся без ответа до утра.</li>
-      </ul>
     </div>
   </section>
 
