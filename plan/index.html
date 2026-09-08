@@ -19,9 +19,9 @@
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--paper);color:var(--text);font:400 14px/1.43 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
   .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-  [data-ru]{display:none}
-  body.ru [data-vi]{display:none}
-  body.ru [data-ru]{display:revert}
+  /* прячем неактивный язык; активному display не задаём, чтобы не спорить с .tile span и подобными */
+  body:not(.ru) [data-ru]{display:none !important}
+  body.ru [data-vi]{display:none !important}
 
   header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
   .top-in{display:flex;align-items:center;gap:16px;height:56px}
