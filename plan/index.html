@@ -108,6 +108,19 @@
 
   .rev{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
   .rev.in{opacity:1;transform:none}
+  /* Ниже 1000px сетка по неделям не помещается целиком, поэтому схема
+     превращается в список: направление, под ним его работы по порядку.
+     Порядок в разметке уже такой, поэтому display:block даёт верную последовательность.
+     Инлайновые grid-column и grid-row перебиваются через !important. */
+  @media (max-width:999px){
+    .map-scroll{overflow-x:visible;padding:14px}
+    .map{min-width:0;display:block}
+    .map .corner,.map .axis{display:none}
+    .map .lane{display:block;grid-column:auto !important;grid-row:auto !important;margin:16px 0 7px;padding-right:0;font-size:13px}
+    .map .lane:first-of-type{margin-top:0}
+    .bar{display:block;grid-column:auto !important;grid-row:auto !important;white-space:normal;overflow:visible;text-overflow:clip;margin-bottom:5px;border-radius:var(--r-sm);padding:9px 12px;font-size:12.5px}
+    .bar.soft{opacity:.55}
+  }
   @media (max-width:900px){
     .tiles{grid-template-columns:repeat(2,1fr)}
     .flow{grid-template-columns:repeat(2,1fr)}
